@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker: &docker_image
+      - image: circleci/node:7.10
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run:
+          name: Test
+          command: |
+            npm install
+            npm run test:coverage
+
+      - run:
+          name: Codecov
+          command: CODECOV_TOKEN=${CODECOV_TOKEN} npm run codecov
+          when: always
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
