@@ -1,6 +1,9 @@
 node_modules
+yarn.lock
 package-lock.json
 .nyc_output/
 .idea/
 .vscode/
+.DS_Store
+dist/
 *.log
