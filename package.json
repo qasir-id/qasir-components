@@ -8,7 +8,7 @@
     "start": "webpack --watch",
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s public"
   },
   "files": [
     "dist/*"
