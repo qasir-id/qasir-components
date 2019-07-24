@@ -5,18 +5,18 @@
 </p>
 
 <p align="center">
-  Gratis aplikasinya, gampang pemakaiannya, jadi gaspol dagangnya. Yuk, daftar Qasir sekarang! Read more at: https://www.qasir.id/
+  Gratis aplikasinya, gampang pemakaiannya, jadi gaspol dagangnya. Read more at: https://www.qasir.id
   <br>
   <a href="#"><strong>Explore Qasir components docs »</strong></a>
   <br>
-  <br>
-  <a href="https://github.com/twbs/bootstrap/issues/new?template=bug.md">Report bug</a>
-  ·
+  <br>    
   <a href="https://www.qasir.id/feature">Feature</a>
+  ·
+  <a href="https://www.qasir.id/blog">Blog</a>
   ·
   <a href="https://www.qasir.id/partnership">Partnership</a>
   ·
-  <a href="https://www.qasir.id/blog">Blog</a>
+  <a href="https://www.qasir.id/device">Device</a>
 </p>
 
 
