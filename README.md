@@ -23,6 +23,7 @@
 ## Table of contents
 
 - [Quick start](#quick-start)
+- [Status](#status)
 - [What's included](#whats-included)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Documentation](#documentation)
@@ -42,6 +43,10 @@ Several quick start options are available:
 - Install with [NuGet](https://www.nuget.org/): CSS: `Install-Package bootstrap` Sass: `Install-Package bootstrap.sass`
 
 Read the [Getting started page](https://getbootstrap.com/docs/4.3/getting-started/introduction/) for information on the framework contents, templates and examples, and more.
+
+
+## Status
+[![Build Status](https://travis-ci.org/QasirID/qasir-components.svg?branch=master)](https://travis-ci.org/QasirID/qasir-components)
 
 
 ## What's included
