@@ -4,7 +4,7 @@ node_js: '8'
 
 # Script that is run before the script phase
 before_script:
-- yarn build-storybook
+- npm run build-storybook
 
 # Deployment information
 deploy:
@@ -13,6 +13,5 @@ deploy:
   github-token: $GITHUB_TOKEN # Will take the environment variable you created on step 5
   local_dir: storybook-static # The folder that needs to be deployed
   repo:  QasirID/qasir-components # Add your username/project_name here
-  target_branch: develop # Tell Travis to deploy on the develop branch
   on:
     branch: master # Tell Travis to trigger a deploy only when we push to master
