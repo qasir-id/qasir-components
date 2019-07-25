@@ -6,14 +6,13 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 
-module.exports = {
-    plugins: [
-      // your custom plugins
-    ],
-    module: {
-      rules: [
-        // add your custom rules.
-      ],
-    },
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.js?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  return config;
 };
   
