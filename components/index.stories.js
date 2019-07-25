@@ -46,3 +46,12 @@ stories.add('as dynamic variables', () => {
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
 });
+
+storiesOf('Button', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'twitter', value: '#00aced', default: true },
+      { name: 'facebook', value: '#3b5998' },
+    ],
+  })
+.add('with text', () => <button>Click me</button>);
