@@ -1,5 +1,8 @@
 node_modules
-.vscode
+yarn.lock
 package-lock.json
-*.log
+.idea/
+.vscode/
+.DS_Store
 dist/
+*.log

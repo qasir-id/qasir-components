@@ -1,58 +1,19 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// you can use this file to add your custom webpack plugins, loaders and anything you like.
+// This is just the basic way to add additional webpack configurations.
+// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
 
-const PublicPath = '../../../public/';
-const plugins = [];
-plugins.push(new MiniCssExtractPlugin({
-  filename: `${PublicPath}, bundle.css`,
-}));
+// IMPORTANT
+// When you add this file, we won't add the default configurations which is similar
+// to "React Create App". This only has babel loader to load JavaScript.
+
 module.exports = {
-  plugins: [],
-  output: {
-    path: __dirname,
-    filename: `${PublicPath}, bundle.js`,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
-        include: path.resolve(__dirname, '../'),
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[hash:12].[ext]',
-              publicPath: `${PublicPath}, images/`,
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75,
-              },
-            },
-          },
-        ],
-      },
+    plugins: [
+      // your custom plugins
     ],
-  },
+    module: {
+      rules: [
+        // add your custom rules.
+      ],
+    },
 };
+  
