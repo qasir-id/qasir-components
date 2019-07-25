@@ -1,4 +1,5 @@
 import { configure, addParameters } from '@storybook/react';
+import theme from './theme';
 
 const newViewports = {
   kindleFire2: {
@@ -20,7 +21,10 @@ const newViewports = {
 
 
 // Option defaults.
-addParameters({  
+addParameters({
+  options: {    
+    theme: theme,
+  },
   viewport: { 
     viewports: newViewports 
   }
