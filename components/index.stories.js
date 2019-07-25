@@ -16,7 +16,7 @@ storiesOf('Styles', module).add(
 );
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button jos</Button>)
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button jos testing</Button>)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>
       <span role="img" aria-label="so cool">
