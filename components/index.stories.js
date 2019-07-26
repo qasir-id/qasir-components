@@ -7,51 +7,29 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />,{
-  notes: 'A very simple example of addon notes'
-});
+storiesOf('Overview/Start', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('Styles', module).add(
-  'Colors', () => <Welcome showApp={linkTo('Button')} />
-);
+const layoutContainer = 'Layout/Container';
+storiesOf(layoutContainer, module).add('Fluid container', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(layoutContainer, module).add('Fixed container', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button jos testing</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-));
+const layoutLevel = 'Layout/Level';
+storiesOf(layoutLevel, module).add('Horizontal level', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(layoutLevel, module).add('Centered level', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(layoutLevel, module).add('Mobile level', () => <Welcome showApp={linkTo('Button')} />);
 
-const stories = storiesOf('Storybook Knobs', module);
+const formGeneral = 'Form/General';
+storiesOf(formGeneral, module).add('Form field', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Form control', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('With icons', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Form addons', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Form group', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Horizontal form', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Vertical form', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(formGeneral, module).add('Disabled form', () => <Welcome showApp={linkTo('Button')} />);
 
-// Add the `withKnobs` decorator to add knobs support to your stories.
-// You can also configure `withKnobs` as a global decorator.
-stories.addDecorator(withKnobs);
-
-// Knobs for React props
-stories.add('with a button', () => (
-  <button disabled={boolean('Disabled', false)} >
-    {text('Label', 'Hello Storybook')}
-  </button>
-));
-
-// Knobs as dynamic variables.
-stories.add('as dynamic variables', () => {
-  const name = text('Name', 'Arunoda Susiripala');
-  const age = number('Age', 89);
-
-  const content = `I am ${name} and I'm ${age} years old.`;
-  return (<div>{content}</div>);
-});
-
-storiesOf('Button', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'twitter', value: '#00aced', default: true },
-      { name: 'facebook', value: '#3b5998' },
-    ],
-  })
-.add('with text', () => <button>Click me</button>);
+const componentAlert = 'Components/Alert';
+storiesOf(componentAlert, module).add('General', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(componentAlert, module).add('Link color', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(componentAlert, module).add('Additional content', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf(componentAlert, module).add('Dismissing', () => <Welcome showApp={linkTo('Button')} />);
