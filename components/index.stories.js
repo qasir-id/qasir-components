@@ -74,28 +74,12 @@ storiesOf(formInputGroup, module).add('Segmented buttons', () => <p>on progress<
 storiesOf(formInputGroup, module).add('Custom select', () => <p>on progress</p>);
 storiesOf(formInputGroup, module).add('Custom file input', () => <p>on progress</p>);
 
-const componentAlert = 'Components/Alert';
-storiesOf(componentAlert, module).add('General', () => <p>on progress</p>);
-storiesOf(componentAlert, module).add('Link color', () => <p>on progress</p>);
-storiesOf(componentAlert, module).add('Additional content', () => <p>on progress</p>);
-storiesOf(componentAlert, module).add('Dismissing', () => <p>on progress</p>);
-
 const componentBadge = 'Components/Badge';
 storiesOf(componentBadge, module).add('Variations', () => <p>on progress</p>);
 storiesOf(componentBadge, module).add('Pill badges', () => <p>on progress</p>);
 storiesOf(componentBadge, module).add('Links', () => <p>on progress</p>);
 
 storiesOf('Components/Breadcrumb', module).add('Examples', () => <p>on progress</p>);
-
-const componentButton = 'Components/Buttons';
-storiesOf(componentButton, module).add('Variations', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Button tags', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Outline buttons', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Sizes', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Active state', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Disabled state', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Toggle state', () => <p>on progress</p>);
-storiesOf(componentButton, module).add('Checkbox and radio buttons', () => <p>on progress</p>);
 
 const componentButtonGroup = 'Components/Button group';
 storiesOf(componentButtonGroup, module).add('Basic example', () => <p>on progress</p>);

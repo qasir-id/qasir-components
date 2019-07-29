@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react'
+import styled, { css } from 'styled-components'
 
 const StyledButton = styled.button`
     border-radius: 5px;
@@ -37,4 +37,4 @@ const Button = ({ secondary, big, inverse, ...props }) => {
     )
 }
 
-export default Button;
+export default Button
