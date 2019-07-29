@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, addParameters } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withState } from '@dump247/storybook-state';
 import marked from 'marked';
 
 import Button from '../button';
@@ -13,7 +14,12 @@ storiesOf(componentButton, module)
             text: marked(basicMD)
         },
     })
-    .add('Variations', () => <Button onClick={action('onClick')}>Hello</Button>);
+    .add(
+        'Variations',
+        withState({ initialState: '' })(
+            ({ store }) => <Button onClick={action('onClick')} {...store.state}>Hello</Button>
+        ),
+    );    
 // storiesOf(componentButton, module).add('Button tags', () => <p>on progress</p>);
 // storiesOf(componentButton, module).add('Outline buttons', () => <p>on progress</p>);
 // storiesOf(componentButton, module).add('Sizes', () => <p>on progress</p>);
