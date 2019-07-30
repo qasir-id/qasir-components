@@ -2,7 +2,7 @@
   "name": "qasir-components",
   "version": "1.0.0",
   "description": "",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
@@ -36,6 +36,7 @@
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
+    "jest": "^24.8.0",
     "marked": "^0.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -50,7 +51,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/QasirID/qasir-components/issues"
   },
