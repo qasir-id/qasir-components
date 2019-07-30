@@ -1,8 +1,13 @@
+import { configure as configureEnzyme } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
+// import { withInfo } from '@storybook/addon-info';
 
 import theme from './theme';
+
+configureEnzyme({ adapter: new Adapter() });
 
 const newViewports = {
   kindleFire2: {
@@ -23,11 +28,11 @@ const newViewports = {
 
 // Addons components
 addDecorator(withA11y);
-addDecorator(
-  withInfo({    
-    header: false
-  })
-); 
+// addDecorator(
+//   withInfo({    
+//     header: false
+//   })
+// ); 
 
 // Option defaults.
 addParameters({
