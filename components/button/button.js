@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button`
@@ -35,6 +36,10 @@ const Button = ({ secondary, big, inverse, ...props }) => {
             {...props}
         />
     )
+}
+
+Button.propTypes = {
+    inverse: PropTypes.bool
 }
 
 export default Button;
