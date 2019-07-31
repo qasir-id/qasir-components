@@ -16,7 +16,81 @@ stories
     .add(
         'Variations', 
         withState({ initialState: '' })(
-            ({ store }) => <Button onClick={action('onClick')} disabled={boolean('Disabled', false)} {...store.state}>{text('Label', 'Hello Storybook')}</Button>
+            ({ store }) => <div>                
+                <Button                     
+                    onClick={action('onClick')}
+                    onMouseEnter={action('onMouseEnter default')}
+                    onMouseLeave={action('onMouseLeave default')} 
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state}                     
+                >{text('Button default', 'Default')}</Button>
+
+                <div style={{ marginRight: 15, display: 'inline' }}></div>
+
+                <Button                
+                    btnType="primary"     
+                    onClick={action('onClick')} 
+                    onMouseEnter={action('onMouseEnter primary')}
+                    onMouseLeave={action('onMouseLeave primary')}
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state}                     
+                >{text('Button primary', 'Primary')}</Button>
+
+                <div style={{ marginRight: 15, display: 'inline' }}></div>
+
+                <Button               
+                    btnType="secondary"      
+                    onClick={action('onClick')} 
+                    onMouseEnter={action('onMouseEnter secondary')}
+                    onMouseLeave={action('onMouseLeave secondary')}
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state}                    
+                >{text('Button secondary', 'Secondary')}</Button>
+
+                <div style={{ marginRight: 15, display: 'inline' }}></div>
+
+                <Button               
+                    btnType="link"      
+                    onClick={action('onClick')} 
+                    onMouseEnter={action('onMouseEnter link')}
+                    onMouseLeave={action('onMouseLeave link')}
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state}                    
+                >{text('Button link', 'Link')}</Button>
+
+            </div>
+        )  
+    );    
+
+stories
+    .addDecorator(withKnobs)
+    .add(
+        'Button tags', 
+        withState({ initialState: '' })(
+            ({ store }) => <div>                
+                <Button                     
+                    onClick={action('onClick')} 
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state} 
+                    style={{marginRight: 10}}
+                >{text('Button default', 'Default')}</Button>
+
+                <Button                
+                    btnType="primary"     
+                    onClick={action('onClick')} 
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state} 
+                    style={{marginRight: 10}}
+                >{text('Button primary', 'Primary')}</Button>
+
+                <Button               
+                    btnType="secondary"      
+                    onClick={action('onClick')} 
+                    disabled={boolean('Disabled', false)} 
+                    {...store.state}
+                >{text('Button secondary', 'Secondary')}</Button>
+
+            </div>
         )  
     );    
 
