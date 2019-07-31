@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button`
+const StyledButton = styled.button.attrs(({ disabled }) => ({    
+        disabled: disabled       
+    }))`
     border-radius: 5px;
-    background-color: ${props => (props.secondary ? '#F7A072' : '#a1cdf1')};
+    background-color: ${props => (props.secondary ? 'red' : '#a1cdf1')};
     color: #fff;
     padding: 10px 15px;
     font-size: ${props => {
@@ -27,9 +29,18 @@ const StyledButton = styled.button`
     }}
 `
 
-const Button = ({ secondary, big, inverse, ...props }) => {
+const Button = ({     
+    disabled,
+    htmlType = 'button', 
+    secondary, 
+    big, 
+    inverse, 
+    ...props 
+}) => {
     return (
         <StyledButton
+            // disabled={disabled}
+            // htmlType={htmlType}
             secondary={secondary}
             big={big}
             inverse={inverse}
@@ -39,7 +50,8 @@ const Button = ({ secondary, big, inverse, ...props }) => {
 }
 
 Button.propTypes = {
-    inverse: PropTypes.bool
+    disabled: PropTypes.bool,
+    htmlType: PropTypes.string
 }
 
 export default Button;
