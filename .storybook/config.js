@@ -1,16 +1,10 @@
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-// import { withInfo } from '@storybook/addon-info';
 
 import theme from './theme';
 
 // Addons components
 addDecorator(withA11y);
-// addDecorator(  
-//   withInfo({    
-//     header: false
-//   })
-// );
 
 // Option defaults.
 addParameters({

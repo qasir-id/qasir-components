@@ -11,13 +11,13 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
     cursor: pointer;
     height: ${({ size }) => {
         if (size == 'sm') {
-            return '28px'
+            return '28px';
         } else if (size == 'md') {
-            return '36px'
+            return '36px';
         } else if (size == 'lg') {
-            return '48px'
+            return '48px';
         } else if (size == 'xl') {
-            return '60px'
+            return '60px';
         }
         return '36px';     
     }};    
@@ -25,7 +25,16 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
     padding: 0 14px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: ${({ textAlign }) => {
+        if (textAlign == 'left') {
+            return 'left';
+        } else if (textAlign == 'center') {
+            return 'center';
+        } else if (textAlign == 'right') {
+            return 'right';
+        } 
+        return 'left';     
+    }};   
     ${({ btnType }) => {
         return (
             btnType == undefined &&
@@ -113,7 +122,8 @@ const Button = ({
 Button.propTypes = {
     disabled: PropTypes.bool,
     htmlType: PropTypes.string,
-    size: PropTypes.string
+    size: PropTypes.string,
+    textAlign: PropTypes.string
 }
 
 export default Button;

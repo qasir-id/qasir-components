@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Renders button type correctly 1`] = `
+<a
+  page="http://www.facebook.com"
+>
+  Facebook
+</a>
+`;
