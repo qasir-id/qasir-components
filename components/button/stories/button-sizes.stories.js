@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import Button from '../button';
+import mdBtnSizes from '../notes/sizes.md';
 
 const componentButton = 'Components/Buttons';
 const stories = storiesOf(componentButton, module);
@@ -14,8 +15,8 @@ stories
         'Sizes', () => {
             return (
                 <div>
-                    <Button                
-                        btnType="primary"     
+                    <Button                                        
+                        type="primary"
                         size="sm"
                         onClick={action('onClick')}                         
                         disabled={boolean('Disabled', false)}                                       
@@ -24,7 +25,7 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>   
 
                     <Button                
-                        btnType="primary"     
+                        type="primary"     
                         size="md"
                         onClick={action('onClick')}                         
                         disabled={boolean('Disabled', false)}                                       
@@ -33,7 +34,7 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>   
 
                     <Button                
-                        btnType="primary"    
+                        type="primary"    
                         size="lg" 
                         onClick={action('onClick')}                         
                         disabled={boolean('Disabled', false)}                                       
@@ -42,12 +43,17 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
                     <Button                
-                        btnType="primary"    
+                        type="primary"    
                         size="xl" 
                         onClick={action('onClick')}                         
                         disabled={boolean('Disabled', false)}                                       
                     >{text('Button extra large', 'Extra large')}</Button>
                 </div>
             )
-        }        
+        },
+        {
+            notes: { 
+                markdown: mdBtnSizes 
+            }
+        }         
     );    

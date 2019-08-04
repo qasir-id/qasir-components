@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import Button from '../button';
-import markdownVariations from '../notes/variations.md';
+import mdBtnVariations from '../notes/variations.md';
 
 const componentButton = 'Components/Buttons';
 const stories = storiesOf(componentButton, module);
@@ -16,7 +16,7 @@ stories
             return (
                 <div>             
                    
-                    <Button                     
+                    <Button                                           
                         onClick={action('onClick')}                    
                         disabled={boolean('Disabled', false)}                                         
                     >{text('Button default', 'Default')}</Button>
@@ -24,7 +24,7 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
                     <Button                
-                        btnType="primary"     
+                        type="primary"     
                         onClick={action('onClick')}                     
                         disabled={boolean('Disabled', false)}                                      
                     >{text('Button primary', 'Primary')}</Button>
@@ -32,7 +32,7 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
                     <Button               
-                        btnType="secondary"      
+                        type="secondary"      
                         onClick={action('onClick')}                     
                         disabled={boolean('Disabled', false)}                                         
                     >{text('Button secondary', 'Secondary')}</Button>
@@ -40,7 +40,7 @@ stories
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
                     <Button               
-                        btnType="link"      
+                        type="link"      
                         onClick={action('onClick')}                     
                         disabled={boolean('Disabled', false)}                                         
                     >{text('Button link', 'Link')}</Button>
@@ -50,7 +50,7 @@ stories
         },
         {
             notes: { 
-                markdown: markdownVariations 
+                markdown: mdBtnVariations 
             }
         } 
     );    

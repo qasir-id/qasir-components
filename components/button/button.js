@@ -23,8 +23,7 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
     }};    
     font-size: 14px;        
     padding: 0 14px;
-    display: inline-flex;
-    align-items: center;
+    display: inline-flex;    
     justify-content: ${({ textAlign }) => {
         if (textAlign == 'left') {
             return 'left';
@@ -35,9 +34,9 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
         } 
         return 'left';     
     }};   
-    ${({ btnType }) => {
+    ${({ type }) => {
         return (
-            btnType == undefined &&
+            (type == undefined || type == 'default') &&
             css`
                 background-color: #ffffff;
                 color: #474955;
@@ -48,9 +47,9 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
             `
         )
     }}  
-    ${({ btnType }) => {
+    ${({ type }) => {
         return (
-            btnType == 'primary' &&
+            type == 'primary' &&
             css`
                 background-color: #F04B32;
                 color: #ffffff;
@@ -61,9 +60,9 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
             `
         )
     }}
-    ${({ btnType }) => {
+    ${({ type }) => {
         return (
-            btnType == 'secondary' &&
+            type == 'secondary' &&
             css`
                 background-color: #F2F4F7;
                 color: #474955;
@@ -74,9 +73,9 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
             `
         )
     }}    
-    ${({ btnType }) => {
+    ${({ type }) => {
         return (
-            btnType == 'link' &&
+            type == 'link' &&
             css`
                 background-color: #ffffff;
                 color: #007bff;
@@ -121,6 +120,7 @@ const Button = ({
 
 Button.propTypes = {
     disabled: PropTypes.bool,
+    type: PropTypes.string,
     htmlType: PropTypes.string,
     size: PropTypes.string,
     textAlign: PropTypes.string

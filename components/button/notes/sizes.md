@@ -1,5 +1,5 @@
-# Button Variations
-The button is an essential element of any design. Includes several predefined button styles.
+# Button Sizes
+The button comes in 4 different sizes: small, medium, large, extra large.
 
 ```js
 import { Button } from 'qasirc';
@@ -8,19 +8,19 @@ import { Button } from 'qasirc';
 <br />
 
 ```html
-<Button>Default</Button>
+<Button size="sm">Small</Button>
 ```
 <br />
 ```html
-<Button type="primary">Primary</Button>
+<Button size="md">Medium</Button>
 ```
 <br />
 ```html
-<Button type="secondary">Secondary</Button>
+<Button size="lg">Large</Button>
 ```
 <br />
 ```html
-<Button type="link">Link</Button>
+<Button size="xl">Extra large</Button>
 ```
 
 <br />
