@@ -2,25 +2,40 @@
   "name": "qasirc",
   "version": "1.0.0",
   "description": "An enterprise-class UI design language and React components",
-  "main": "dist/index.js",
+  "main": "dist",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors",
+    "test:coverage": "eslint . && jest --coverage --colors",
+    "eslint": "eslint .",
     "start": "webpack --watch",
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -s public",
     "publish": "npm login publish"
   },
-  "files": [
-    "dist/*"
-  ],
-  "jest": {
-    "setupFiles": [
-      "./src/components/setup-test.js"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QasirID/qasir-components.git"
   },
+  "keywords": [
+    "qasir",
+    "react",
+    "storybook",
+    "design",
+    "react component",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend"
+  ],
+  "author": "engineering@qasir.id",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QasirID/qasir-components/issues"
+  },
+  "homepage": "https://github.com/QasirID/qasir-components#readme",
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -29,6 +44,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@dump247/storybook-state": "^1.6.1",
@@ -47,36 +63,27 @@
     "babel-polyfill": "^6.26.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.14.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
     "marked": "^0.7.0",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
     "styled-components": "^4.3.2",
     "webpack": "^4.37.0",
     "webpack-cli": "^3.3.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/QasirID/qasir-components.git"
-  },
-  "keywords": [
-    "qasir",    
-    "react",
-    "storybook",
-    "design",    
-    "react-component",
-    "component",
-    "components",
-    "ui",
-    "framework",
-    "frontend"
-  ],
-  "author": "engineering@qasir.id",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/QasirID/qasir-components/issues"
-  },
-  "homepage": "https://github.com/QasirID/qasir-components#readme"
+  },  
+  "jest": {
+    "setupFiles": [
+      "./src/__test__/setup-test.js"
+    ]
+  }
 }

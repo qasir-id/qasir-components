@@ -92,6 +92,7 @@ const StyledButtonLink = styled.a`
 `;
 
 const Button = ({     
+    children,
     disabled,
     htmlType = 'button',  
     size = 'md',   
@@ -104,7 +105,7 @@ const Button = ({
                 htmlType={htmlType}        
                 size={size}                                    
                 {...props}
-            />
+            >{children}</StyledButton>
         )
     }
     if (htmlType == 'a') {
@@ -113,17 +114,22 @@ const Button = ({
                 htmlType={htmlType}   
                 size={size}         
                 {...props}
-            />
+            >{children}</StyledButtonLink>
         )
     }    
 }
 
 Button.propTypes = {
+    children: PropTypes.node,
     disabled: PropTypes.bool,
     type: PropTypes.string,
     htmlType: PropTypes.string,
     size: PropTypes.string,
     textAlign: PropTypes.string
+}
+
+Button.defaultProps = {
+    children: null
 }
 
 export default Button;

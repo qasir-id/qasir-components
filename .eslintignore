@@ -1,0 +1,6 @@
+dist/**
+**.min.js
+lib/**
+node_modules
+*.story.js
+storybook-static
