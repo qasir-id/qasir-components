@@ -8,14 +8,15 @@
     "test:watch": "jest --watch",
     "test:coverage": "eslint . && jest --coverage --colors",
     "eslint": "eslint .",
-    "start": "webpack --watch",    
+    "start": "webpack --watch",
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -s public",
-    "prepare": "npm run clean:build && npm run build && npm run clean:test",    
+    "prepare": "npm run clean:build && npm run build && npm run clean:test",
     "create:lib": "babel ./src --out-dir ./lib --copy-files --source-maps",
     "clean:build": "rm -rf dist && rm -rf lib",
     "clean:test": "rm -rf $(find ./lib -name \"__test__\")",
+    "build": "webpack --progress --color --mode=production && webpack --progress --color --mode=production && npm run create:lib",
     "publish": "npm login publish"
   },
   "repository": {
@@ -64,6 +65,7 @@
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -77,12 +79,14 @@
     "jest": "^24.8.0",
     "marked": "^0.7.0",
     "polished": "^3.4.1",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
     "styled-components": "^4.3.2",
     "webpack": "^4.37.0",
+    "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.6"
-  }  
+  }
 }
