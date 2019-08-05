@@ -38,10 +38,10 @@ import { Button } from 'qasirc';
   </thead>
   <tbody>
     <tr>
-      <td style="color: #003a8c">type</td>
-      <td>can be set to `primary`, `secondary`, `link` or omitted (meaning `default`)</td>
+      <td style="color: #003a8c">size</td>
+      <td>can be set to `sm`, `md`, `lg`, `xl` or omitted</td>
       <td style="color: #c41d7f">string</td>
-      <td>`default`</td>
+      <td>`md`</td>
     </tr>    
   </tbody>
 </table>

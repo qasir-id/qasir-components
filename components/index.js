@@ -15,4 +15,7 @@
 // }
 /* @remove-on-es-build-end */
 
-// export { default as Button } from './button';
+import Button from './Button';
+export {
+    Button
+};
