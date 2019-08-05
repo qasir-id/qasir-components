@@ -1,7 +1,7 @@
 # Button Sizes
 The button comes in 4 different sizes: small, medium, large, extra large.
 
-```js
+```javascript
 import { Button } from 'qasirc';
 ```
 

@@ -1,7 +1,7 @@
 # Button Variations
 The button is an essential element of any design. Includes several predefined button styles.
 
-```js
+```javascript
 import { Button } from 'qasirc';
 ```
 
