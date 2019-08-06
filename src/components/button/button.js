@@ -3,43 +3,58 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-const StyledButton = styled.button.attrs(({ disabled }) => ({    
-        disabled: disabled       
+import constants from '../../modifiers/constants';
+import colors from '../../modifiers/colors';
+import { button } from '../../modifiers/variables';
+
+const { SIZES, ALIGN } = constants;
+const { white, theme, black90 } = colors;
+
+const StyledButton = styled.button.attrs(({ 
+        disabled
+    }) => ({    
+        disabled: disabled           
     }))`    
     border-radius: 4px;
     outline: none;    
     cursor: pointer;
-    height: ${({ size }) => {
-        if (size == 'sm') {
-            return '28px';
-        } else if (size == 'md') {
-            return '36px';
-        } else if (size == 'lg') {
-            return '48px';
-        } else if (size == 'xl') {
-            return '60px';
+    height: ${({ size }) => {      
+        const { SMALL, MEDIUM, LARGE, EXTRALARGE } = SIZES;  
+        switch (size) {
+            case SMALL:
+                return button.small;              
+            case MEDIUM:
+                return button.medium;  
+            case LARGE:
+                return button.large;   
+            case EXTRALARGE:
+                return button.extralarge;                  
+            default: 
+                return button.medium; 
         }
-        return '36px';     
     }};    
     font-size: 14px;        
     padding: 0 14px;
     display: inline-flex;    
-    justify-content: ${({ textAlign }) => {
-        if (textAlign == 'left') {
-            return 'left';
-        } else if (textAlign == 'center') {
-            return 'center';
-        } else if (textAlign == 'right') {
-            return 'right';
-        } 
-        return 'left';     
+    justify-content: ${({ textAlign }) => {      
+        const { LEFT, CENTER, RIGHT } = ALIGN;  
+        switch (textAlign) {
+            case LEFT:
+                return LEFT;              
+            case CENTER:
+                return CENTER;  
+            case RIGHT:
+                return RIGHT;                           
+            default: 
+                return LEFT; 
+        }        
     }};   
     ${({ type }) => {
         return (
             (type == undefined || type == 'default') &&
             css`
-                background-color: #ffffff;
-                color: #474955;
+                background-color: ${white};
+                color: ${black90};
                 border: 1px solid #EDECF3;
                 &:hover {
                     border: 1px solid ${darken(0.1, '#EDECF3')};
@@ -51,11 +66,11 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
         return (
             type == 'primary' &&
             css`
-                background-color: #F04B32;
-                color: #ffffff;
+                background-color: ${theme};
+                color: ${white};
                 border: none;
                 &:hover {
-                    background-color: ${darken(0.1, '#F04B32')};
+                    background-color: ${darken(0.1, theme)};
                 }
             `
         )
@@ -65,7 +80,7 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
             type == 'secondary' &&
             css`
                 background-color: #F2F4F7;
-                color: #474955;
+                color: ${black90};
                 border: none;
                 &:hover {
                     background-color: ${darken(0.1, '#F2F4F7')};
@@ -77,7 +92,7 @@ const StyledButton = styled.button.attrs(({ disabled }) => ({
         return (
             type == 'link' &&
             css`
-                background-color: #ffffff;
+                background-color: ${white};
                 color: #007bff;
                 border: none;
                 &:hover {
@@ -93,17 +108,21 @@ const StyledButtonLink = styled.a`
 
 const Button = ({     
     children,
+    className,
+    htmlType,          
+    size,   
     disabled,
-    htmlType = 'button',  
-    size = 'md',   
+    onClick,
     ...props 
 }) => {
     if (htmlType == 'button') {
         return (
             <StyledButton            
                 type="button"
+                className={className}
                 htmlType={htmlType}        
-                size={size}                                    
+                size={size}
+                onClick={onClick}                                    
                 {...props}
             >{children}</StyledButton>
         )
@@ -111,8 +130,10 @@ const Button = ({
     if (htmlType == 'a') {
         return (
             <StyledButtonLink            
+                className={className}
                 htmlType={htmlType}   
-                size={size}         
+                size={size}       
+                onClick={onClick}  
                 {...props}
             >{children}</StyledButtonLink>
         )
@@ -121,15 +142,27 @@ const Button = ({
 
 Button.propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.shape({}),
+    type: PropTypes.string,    
+    htmlType: PropTypes.oneOfType([
+        PropTypes.oneOf(['a', 'button', 'span']),
+        PropTypes.func,
+    ]),            
+    size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
     disabled: PropTypes.bool,
-    type: PropTypes.string,
-    htmlType: PropTypes.string,
-    size: PropTypes.string,
-    textAlign: PropTypes.string
+    onClick: PropTypes.func    
 }
 
-Button.defaultProps = {
-    children: null
+Button.defaultProps = {    
+    children: null,
+    className: undefined,
+    style: undefined,
+    type: 'md',
+    htmlType: 'button',
+    size: undefined,
+    disabled: false,
+    onClick: () => null
 }
 
 export default Button;

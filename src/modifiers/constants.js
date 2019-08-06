@@ -9,6 +9,7 @@ export default {
   },
   COLORS: {
     PRIMARY: 'primary',
+    SECONDARY: 'secondary',
     SUCCESS: 'success',
     INFO: 'info',
     WARNING: 'warning',
@@ -19,4 +20,15 @@ export default {
     BLACK: 'black',
     LINK: 'link',
   },
+  SIZES: {
+    SMALL: 'sm',
+    MEDIUM: 'md',
+    LARGE: 'lg',
+    EXTRALARGE: 'xl'
+  },
+  ALIGN: {
+    LEFT: 'left',
+    CENTER: 'center',
+    RIGHT: 'right'
+  }
 };

@@ -1,6 +1,6 @@
 {
   "name": "qasirc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An enterprise-class UI design language and React components",
   "main": "dist",
   "scripts": {
@@ -40,6 +40,10 @@
     "url": "https://github.com/QasirID/qasir-components/issues"
   },
   "homepage": "https://github.com/QasirID/qasir-components#readme",
+  "dependencies": {
+    "polished": "^3.4.1",
+    "styled-components": "^4.3.2"
+  },
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -76,14 +80,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
-    "marked": "^0.7.0",
-    "polished": "^3.4.1",
+    "marked": "^0.7.0",    
     "progress-bar-webpack-plugin": "^1.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
-    "styled-components": "^4.3.2",
+    "react-test-renderer": "^16.8.6",    
     "webpack": "^4.37.0",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.6"

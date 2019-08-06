@@ -3,3 +3,10 @@
 .env
 webpack.config.js
 .travis.yml
+.vscode
+.eslintignore
+.eslintrc
+storybook-static/
+src/
+reports/
+jest.config.js
