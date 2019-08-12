@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-import constants from '../../modifiers/constants';
+import CONSTANTS from '../../modifiers/constants';
 import colors from '../../modifiers/colors';
 import { button } from '../../modifiers/variables';
 
-const { SIZES, ALIGN } = constants;
+const { SIZES, ALIGN } = CONSTANTS;
 const { white, theme, black } = colors;
 
 const StyledButton = styled.button.attrs(({ 

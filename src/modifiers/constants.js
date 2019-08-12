@@ -1,4 +1,31 @@
 export default {
+  CATEGORY: {
+    COLUMNS: {
+      
+    },
+    COMPONENTS: {
+
+    },
+    ELEMENTS: [
+      'Elements',
+      {
+        BUTTONS: 'Buttons',
+        TABLES: 'Tables'
+      }
+    ],
+    FORM: {
+
+    },
+    LAYOUT: {
+
+    },
+    OVERVIEW: {
+
+    },
+    UIKIT: {
+
+    }
+  },
   BREAKPOINTS: {
     DESKTOP: 'desktop',
     TABLET: 'tablet',
@@ -39,5 +66,5 @@ export default {
     LEFT: 'left',
     CENTER: 'center',
     RIGHT: 'right'
-  }
+  }  
 };

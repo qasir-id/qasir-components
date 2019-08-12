@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import CONSTANTS from '../../modifiers/constants';
 import colors from '../../modifiers/colors';
 import Helpers from '../../modifiers/helpers';
+import Table from '../../elements/table';
 
 const overviewColors = 'Overview/Colors';
 const stories = storiesOf(overviewColors, module);
@@ -69,7 +70,7 @@ stories
     .add(
         'Base Color', () => {
             return (
-                <table class="table">
+                <Table>
                     <thead>
                         <tr>
                             <th scope="col">Color</th>
@@ -95,7 +96,7 @@ stories
                             )
                         }                                             
                     </tbody>
-                </table>
+                </Table>
             )
         }
     );    

@@ -5,8 +5,9 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import Button from '../button';
 import mdBtnSizes from '../notes/sizes.md';
+import CONSTANTS from '../../../modifiers/constants';
 
-const componentButton = 'Components/Buttons';
+const componentButton = CONSTANTS.CATEGORY.ELEMENTS[0]+'/'+CONSTANTS.CATEGORY.ELEMENTS[1].BUTTONS;
 const stories = storiesOf(componentButton, module);
 
 stories

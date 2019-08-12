@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-const componentTables = 'Components/Tables';
-const stories = storiesOf(componentTables, module);
+const elementsTables = 'Elements/Tables';
+const stories = storiesOf(elementsTables, module);
 
 stories
     .add(
-        'Striped', () => {
+        'Bordered', () => {
             return (
                 <p>hello</p>
             );

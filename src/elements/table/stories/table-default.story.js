@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions';
 import Table from '../table';
 import mdTable from '../notes/table.md';
 
-const componentTables = 'Components/Tables';
-const stories = storiesOf(componentTables, module);
+const elementsTables = 'Elements/Tables';
+const stories = storiesOf(elementsTables, module);
 
 stories
     .add(

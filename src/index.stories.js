@@ -7,10 +7,11 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import './overview/stories/colors.story';
 
-import './components/button/stories/button-sizes.story';
-import './components/button/stories/button-tags.story';
+import './elements/button/stories/button-variations.story';
+import './elements/button/stories/button-sizes.story';
+import './elements/button/stories/button-tags.story';
 
-import './components/table/stories/table-default.story';
+import './elements/table/stories/table-default.story';
 
 // const overview = 'Overview';
 // storiesOf(overview+'/Start', module).add('Install', () => <p>on progress</p>);

@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-const componentTables = 'Components/Tables';
-const stories = storiesOf(componentTables, module);
+const elementsTables = 'Elements/Tables';
+const stories = storiesOf(elementsTables, module);
 
 stories
     .add(
-        'Table Container', () => {
+        'Full Width', () => {
             return (
                 <p>hello</p>
             );

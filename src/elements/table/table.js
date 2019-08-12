@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledTable = styled.table`
+import colors from '../../modifiers/colors';
 
+const { black } = colors;
+
+const StyledTable = styled.table`
+    width: 100%;
+    margin-bottom: 1rem;
+    color: ${black};
 `;
 
 const Table = ({
