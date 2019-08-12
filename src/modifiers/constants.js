@@ -8,6 +8,15 @@ export default {
     TOUCH: 'touch',
   },
   COLORS: {
+    BASE: {
+      RED: 'red',
+      BLUE: 'blue',
+      GREEN: 'green',
+      ORANGE: 'orange',
+      GREY: 'grey',
+      BLACK: 'black',
+      WHITE: 'white'
+    },
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
     SUCCESS: 'success',

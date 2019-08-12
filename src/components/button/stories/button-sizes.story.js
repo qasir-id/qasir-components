@@ -57,3 +57,5 @@ stories
             }
         }         
     );    
+
+export default stories;

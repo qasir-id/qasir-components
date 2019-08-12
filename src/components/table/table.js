@@ -15,8 +15,16 @@ const Table = ({
     hoverable,
     fullwidth,
     tableContainer,
+    columns,
+    dataSource,
     ...props
-});
+}) => {
+    return (
+        <StyledTable>
+            {children}
+        </StyledTable>
+    );
+}
 
 Table.propTypes = {
     children: PropTypes.node,
@@ -26,7 +34,10 @@ Table.propTypes = {
     narrow: PropTypes.bool,
     hoverable: PropTypes.bool,
     fullwidth: PropTypes.bool,
-    tableContainer: PropTypes.bool
+    tableContainer: PropTypes.bool,
+    columns: PropTypes.array,
+    dataSource: PropTypes.array,
+    style: PropTypes.shape({})
 }
 
 Table.defaultProps = {    
@@ -37,7 +48,10 @@ Table.defaultProps = {
     narrow: false,
     hoverable: false,
     fullwidth: false,
-    tableContainer: false
+    tableContainer: false,
+    columns: null,
+    dataSource: null,
+    style: undefined
 }
 
 export default Table;

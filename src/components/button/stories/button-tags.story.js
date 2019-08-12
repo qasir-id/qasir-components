@@ -44,3 +44,5 @@ stories
             }
         }         
     );    
+
+export default stories;

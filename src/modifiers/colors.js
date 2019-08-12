@@ -6,7 +6,7 @@ const red = '#F04B32',
       grey = '#E3E5ED',    
       grey2 = '#EEF0F2',  
       black = '#474955',      
-      white = '#FFFFFF'
+      white = '#FFFFFF'; 
 
 export default {        
     red,

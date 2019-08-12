@@ -8,7 +8,7 @@ import colors from '../../modifiers/colors';
 import { button } from '../../modifiers/variables';
 
 const { SIZES, ALIGN } = constants;
-const { white, theme, black90 } = colors;
+const { white, theme, black } = colors;
 
 const StyledButton = styled.button.attrs(({ 
         disabled
@@ -54,7 +54,7 @@ const StyledButton = styled.button.attrs(({
             (type == undefined || type == 'default') &&
             css`
                 background-color: ${white};
-                color: ${black90};
+                color: ${black};
                 border: 1px solid #EDECF3;
                 &:hover {
                     border: 1px solid ${darken(0.1, '#EDECF3')};
@@ -80,7 +80,7 @@ const StyledButton = styled.button.attrs(({
             type == 'secondary' &&
             css`
                 background-color: #F2F4F7;
-                color: ${black90};
+                color: ${black};
                 border: none;
                 &:hover {
                     background-color: ${darken(0.1, '#F2F4F7')};
