@@ -102,7 +102,12 @@ const StyledButton = styled.button.attrs(({
         )
     }}    
 `;
+
 const StyledButtonLink = styled.a`
+    border-radius: 5px;    
+`;
+
+const StyledButtonInput = styled.input`
     border-radius: 5px;    
 `;
 
@@ -113,6 +118,7 @@ const Button = ({
     size,   
     disabled,
     onClick,
+    href,
     ...props 
 }) => {
     if (htmlType == 'button') {
@@ -134,10 +140,23 @@ const Button = ({
                 htmlType={htmlType}   
                 size={size}       
                 onClick={onClick}  
+                href={href}
+                role="button"
                 {...props}
             >{children}</StyledButtonLink>
         )
     }    
+    // if (htmlType == 'input') {
+    //     return (
+    //         <StyledButtonInput            
+    //             className={className}
+    //             htmlType={htmlType}   
+    //             size={size}       
+    //             onClick={onClick}  
+    //             {...props}
+    //         >{children}</StyledButtonInput>
+    //     )
+    // }    
 }
 
 Button.propTypes = {
@@ -150,6 +169,7 @@ Button.propTypes = {
         PropTypes.func,
     ]),            
     size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+    href: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func    
 }
@@ -161,6 +181,7 @@ Button.defaultProps = {
     type: 'md',
     htmlType: 'button',
     size: undefined,
+    href: undefined,
     disabled: false,
     onClick: () => null
 }

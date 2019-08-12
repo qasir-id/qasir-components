@@ -3,19 +3,19 @@ const red = '#F04B32',
       blue = '#4F94FC',
       green = '#33CC59',
       orange = '#FFA000',
-      grey = '#E3E5ED',
-      black90 = '#474955',
-      black40 = '#737580',
+      grey = '#E3E5ED',    
+      grey2 = '#EEF0F2',  
+      black = '#474955',      
       white = '#FFFFFF'
 
-export default {    
-    theme: red,
+export default {        
     red,
     blue,
     green,
     orange,
     grey,
-    black40,
-    black90,
-    white
+    grey2,
+    black,    
+    white,
+    theme: red    
 }
