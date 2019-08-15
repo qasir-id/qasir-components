@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import CONSTANTS from '../../modifiers/constants';
 import colors from '../../modifiers/colors';
 import Helpers from '../../modifiers/helpers';
-import Table from '../../elements/table';
+import Table from '../../components/table';
 
 const overviewColors = 'Overview/Colors';
 const stories = storiesOf(overviewColors, module);
