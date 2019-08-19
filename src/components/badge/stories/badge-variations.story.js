@@ -3,27 +3,26 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import Badge from '../badge';
+import mdBadgeVariations from '../notes/variations.md';
 import CONSTANTS from '../../../modifiers/constants';
-import { largeDummyContainerStyle, mediumDummyContainerStyle, smallDummyContainerStyle } from "../common/styles";
+import { mediumDummyContainerStyle } from "../common/styles";
 
 const componentBadge = CONSTANTS.CATEGORY.ELEMENTS[0]+'/'+CONSTANTS.CATEGORY.ELEMENTS[1].BADGE;
 const stories = storiesOf(componentBadge, module);
 
-stories.add('Default', 
+stories.add('Variations', 
     () => {
         return (
             <div>
-                <div style={largeDummyContainerStyle}>
-                    <Badge count={100} />
-                </div>
                 <div style={mediumDummyContainerStyle}>
                     <Badge count={38} />
                 </div>
-
-                <div style={smallDummyContainerStyle}>
-                    <Badge count={48} />
+                <div style={mediumDummyContainerStyle}>
+                    <Badge dot={true} count={38} />
                 </div>
             </div>
-        );
+        )
+    }, {
+        notes: mdBadgeVariations
     }
 );

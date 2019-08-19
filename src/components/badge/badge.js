@@ -13,14 +13,14 @@ const BadgeContainer = styled.div`
 
 const StyledBadge = styled.div
         .attrs(({ disabled }) => ({ disabled: disabled }))`
-    border: 1px solid #ef5656;
+    border: 1px solid #fff;
     border-radius: 32px;
     padding: ${ props => props.dot ? '4px' : '2px 4px' };
     margin: 0;
     font-size: 10px;
     font-weight: bold;
     color: #fff;
-    background-color: ${ colors.red };
+    background-color: ${ props => props.color ? props.color : colors.red };
     display: inline-block;
     position: absolute;
     left: ${ props => props.dot ? 'calc(100% - 6px)' : 'calc(100% - 12px)' };
@@ -28,22 +28,27 @@ const StyledBadge = styled.div
     z-index: 9;
 `;
 
-const Badge = ({ count, dot }) => {
+const Badge = ({ count, dot, color, showWhenZero }) => {
     return (
         <BadgeContainer>
-            <StyledBadge dot={dot}>{ count > 99 ? '99+' : count }</StyledBadge>
+            { (showWhenZero || count > 0) &&
+                <StyledBadge dot={dot} color={color}>{ !dot && ( count > 99 ? '99+' : count ) }</StyledBadge>
+            }
         </BadgeContainer>);
 }
 
 Badge.propTypes = {
+    count: PropTypes.number,
     color: PropTypes.string,
-    count: PropTypes.number.isRequired,
-    dot: PropTypes.bool
+    dot: PropTypes.bool,
+    showWhenZero: PropTypes.bool,
 }
 
 Badge.defaultProps = {
+    count: 0,
     color: colors.red,
-    dot: false
+    dot: false,
+    showWhenZero: false,
 }
 
 export default Badge;
