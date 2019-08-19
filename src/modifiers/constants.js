@@ -10,7 +10,8 @@ export default {
       'Elements',
       {
         BUTTONS: 'Buttons',
-        TABLES: 'Tables'
+        TABLES: 'Tables',
+        BADGE: 'Badges'
       }
     ],
     FORM: {
