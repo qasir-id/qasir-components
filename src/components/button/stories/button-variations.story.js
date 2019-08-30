@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import Button from '../button';
 import mdBtnVariations from '../notes/variations.md';
@@ -15,19 +16,38 @@ stories
             return (
                 <div>             
                    
-                    <Button onClick={action('onClick')}>Default</Button>
+                    <Button 
+                        onClick={action('onClick')}
+                    >
+                        Default
+                    </Button>
 
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
-                    <Button type="primary" onClick={action('onClick')}>Primary</Button>
+                    <Button 
+                        primary 
+                        onClick={action('onClick')}
+                    >
+                        Primary
+                    </Button>
 
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
-                    <Button type="secondary" onClick={action('onClick')}>Secondary</Button>
+                    <Button 
+                        secondary 
+                        onClick={action('onClick')}
+                    >
+                        Secondary
+                    </Button>
 
                     <div style={{ marginRight: 15, display: 'inline' }}></div>
 
-                    <Button type="link" onClick={action('onClick')}>Link</Button>
+                    <Button 
+                        link 
+                        onClick={action('onClick')}
+                    >
+                        Link
+                    </Button>
 
                 </div>
             )

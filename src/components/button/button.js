@@ -10,11 +10,10 @@ import { button } from '../../modifiers/variables';
 const { SIZES, ALIGN } = CONSTANTS;
 const { white, theme, black } = colors;
 
-const StyledButton = styled.button.attrs(({ 
-        disabled
-    }) => ({    
-        disabled: disabled           
-    }))`    
+const StyledButton = styled.button.attrs(props => console.log(props))`    
+    background-color: ${white};
+    color: ${black};
+    border: 1px solid #EDECF3;        
     border-radius: 4px;
     outline: none;    
     cursor: pointer;
@@ -48,49 +47,39 @@ const StyledButton = styled.button.attrs(({
             default: 
                 return LEFT; 
         }        
-    }};   
-    ${({ type }) => {
+    }};       
+    &:hover {
+        border: 1px solid ${darken(0.1, '#EDECF3')};
+    }
+    ${({ primary }) => {
         return (
-            (type == undefined || type == 'default') &&
-            css`
-                background-color: ${white};
-                color: ${black};
-                border: 1px solid #EDECF3;
-                &:hover {
-                    border: 1px solid ${darken(0.1, '#EDECF3')};
-                }
-            `
-        )
-    }}  
-    ${({ type }) => {
-        return (
-            type == 'primary' &&
+            primary &&
             css`
                 background-color: ${theme};
                 color: ${white};
-                border: none;
+                border: 1px solid ${theme};
                 &:hover {
                     background-color: ${darken(0.1, theme)};
                 }
             `
         )
     }}
-    ${({ type }) => {
+    ${({ secondary }) => {
         return (
-            type == 'secondary' &&
+            secondary &&
             css`
                 background-color: #F2F4F7;
                 color: ${black};
-                border: none;
+                border: 1px solid #F2F4F7;
                 &:hover {
                     background-color: ${darken(0.1, '#F2F4F7')};
                 }
             `
         )
     }}    
-    ${({ type }) => {
+    ${({ link }) => {
         return (
-            type == 'link' &&
+            link &&
             css`
                 background-color: ${white};
                 color: #007bff;
@@ -115,48 +104,17 @@ const Button = ({
     children,
     className,
     htmlType,          
-    size,   
-    disabled,
-    onClick,
-    href,
+    size,               
     ...props 
-}) => {
-    if (htmlType == 'button') {
-        return (
-            <StyledButton            
-                type="button"
-                className={className}
-                htmlType={htmlType}        
-                size={size}
-                onClick={onClick}                                    
-                {...props}
-            >{children}</StyledButton>
-        )
-    }
-    if (htmlType == 'a') {
-        return (
-            <StyledButtonLink            
-                className={className}
-                htmlType={htmlType}   
-                size={size}       
-                onClick={onClick}  
-                href={href}
-                role="button"
-                {...props}
-            >{children}</StyledButtonLink>
-        )
-    }    
-    // if (htmlType == 'input') {
-    //     return (
-    //         <StyledButtonInput            
-    //             className={className}
-    //             htmlType={htmlType}   
-    //             size={size}       
-    //             onClick={onClick}  
-    //             {...props}
-    //         >{children}</StyledButtonInput>
-    //     )
-    // }    
+}) => {    
+    return (
+        <StyledButton            
+            type="button"            
+            htmlType={htmlType}        
+            size={size}                                             
+            {...props}
+        >{children}</StyledButton>
+    )
 }
 
 Button.propTypes = {
@@ -165,7 +123,7 @@ Button.propTypes = {
     style: PropTypes.shape({}),
     type: PropTypes.string,    
     htmlType: PropTypes.oneOfType([
-        PropTypes.oneOf(['a', 'button', 'span']),
+        PropTypes.oneOf(['a', 'button', 'input']),
         PropTypes.func,
     ]),            
     size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
@@ -178,7 +136,7 @@ Button.defaultProps = {
     children: null,
     className: undefined,
     style: undefined,
-    type: 'md',
+    type: 'button',
     htmlType: 'button',
     size: undefined,
     href: undefined,

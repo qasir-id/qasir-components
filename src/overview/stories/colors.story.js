@@ -32,37 +32,37 @@ const baseColors = [
         colorName: BLUE,
         hex: blue,
         rgb: hex2rgb(blue),
-        hsl: 'hsl(60,97%,65%)'
+        hsl: hex2hsl(blue)
     },
     {
         colorName: GREEN,
         hex: green,
         rgb: hex2rgb(green),
-        hsl: 'hsl(37,60%,50%)'
+        hsl: hex2hsl(green)
     },
     {
         colorName: ORANGE,
         hex: orange,
         rgb: hex2rgb(orange),
-        hsl: 'hsl(10,100%,50%)'
+        hsl: hex2hsl(orange)
     },
     {
         colorName: GREY,
         hex: grey,
         rgb: hex2rgb(grey),
-        hsl: 'hsl(63,22%,91%)'
+        hsl: hex2hsl(grey)
     },
     {
         colorName: BLACK,
         hex: black,
         rgb: hex2rgb(black),
-        hsl: 'hsl(64,9%,31%)'
+        hsl: hex2hsl(black)
     },
     {
         colorName: WHITE,
         hex: white,
         rgb: hex2rgb(white),
-        hsl: 'hsl(0,0%,100%)'
+        hsl: hex2hsl(white)
     }
 ]
 

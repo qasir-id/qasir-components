@@ -7,6 +7,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import './overview/stories/colors.story';
 
+import './components/button/stories/button-example.story';
 import './components/button/stories/button-variations.story';
 import './components/button/stories/button-sizes.story';
 import './components/button/stories/button-tags.story';

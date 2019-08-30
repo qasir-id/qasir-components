@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component Should be a default Button 1`] = `
-<button
-  className="sc-bdVaJa fQAHqL"
-  size="md"
-  type="button"
-/>
-`;
-
 exports[`Button component Should exist 1`] = `[Function]`;
