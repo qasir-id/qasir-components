@@ -13,9 +13,12 @@ import './components/button/stories/button-sizes.story';
 import './components/button/stories/button-tags.story';
 
 import './components/table/stories/table-default.story';
+
 import './components/badge/stories/badge-default.story';
 import './components/badge/stories/badge-variations.story';
 import './components/badge/stories/badge-show-when-zero.story';
+
+import './components/navbar/stories/navbar-variations.story';
 
 // const overview = 'Overview';
 // storiesOf(overview+'/Start', module).add('Install', () => <p>on progress</p>);

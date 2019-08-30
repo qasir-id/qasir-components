@@ -11,7 +11,8 @@ export default {
       {
         BUTTONS: 'Buttons',
         TABLES: 'Tables',
-        BADGE: 'Badges'
+        BADGE: 'Badges',
+        NAVBAR: 'Navbar'
       }
     ],
     FORM: {
