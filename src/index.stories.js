@@ -12,6 +12,7 @@ import './components/button/stories/button-sizes.story';
 import './components/button/stories/button-tags.story';
 
 import './components/table/stories/table-default.story';
+import './components/checkbox/stories/checkbox-basic.story';
 
 // const overview = 'Overview';
 // storiesOf(overview+'/Start', module).add('Install', () => <p>on progress</p>);
