@@ -12,7 +12,10 @@ stories
     .add(
         'Default', () => {
             return (
-               <Checkbox checked={true}>checkbox</Checkbox>
+               <Checkbox checked={true}
+               disabled={false}
+               onChange={onchange}
+               >checkbox</Checkbox>
             );
         }
     );
