@@ -5,7 +5,7 @@ import { darken } from 'polished';
 import classnames from 'classnames';
 
 import * as v from '../../shared/constants/variables';
-import Loader, { LOADER_COLOR } from '../../../lib/base/loader/loader';
+import Loader, { LOADER_COLOR } from '../loader/loader';
 
 export const BUTTON_VARIANT = {
   primary: 'primary',
