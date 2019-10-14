@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col as AntdCol } from 'antd';
+import { Col as AntdCol } from 'antd/es/grid';
 
 import styles from './grid.styles';
 
