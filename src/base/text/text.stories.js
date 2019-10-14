@@ -12,12 +12,12 @@ const DESCRIPTION = `
 Text
 ---
 ~~~js
-import Text from '@qui/lib/base;
+import Text from 'qasir/lib/base;
 ~~~
 
 or
 ~~~js
-import Text from '@qui/lib/base/text;
+import Text from 'qasir/lib/base/text;
 ~~~
 
 Usage

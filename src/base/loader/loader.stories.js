@@ -12,13 +12,13 @@ const DESCRIPTION = `
 Loader
 ---
 ~~~js
-import Text from '@qui/lib/base/';
+import Text from 'qasir/lib/base/';
 ~~~
 
 or
 
 ~~~js
-import Text from '@qui/lib/base/loader';
+import Text from 'qasir/lib/base/loader';
 ~~~
 
 Examples
