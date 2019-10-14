@@ -31,3 +31,5 @@ node_modules/
 storybook-static/
 *coverage/
 .coverage
+*yarn.lock
+*package-lock.json

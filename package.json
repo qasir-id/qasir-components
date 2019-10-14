@@ -1,6 +1,6 @@
 {
   "name": "qasiralpha",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "An enterprise-class UI design language and React components",
   "main": "dist",
   "scripts": {
