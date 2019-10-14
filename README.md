@@ -20,8 +20,7 @@ Read the [Getting started page](http://qasirid.github.io/qasir-components) for i
 ## Status
 [![Build Status](https://travis-ci.org/QasirID/qasir-components.svg?branch=master)](https://travis-ci.org/QasirID/qasir-components)
 [![Coverage Status](https://coveralls.io/repos/github/couds/qasir-components/badge.svg?branch=master)](https://coveralls.io/github/couds/qasir-components?branch=master)
-[![Release Version](https://img.shields.io/github/release/couds/qasir-components.svg)](https://github.com/couds/qasir-components)
-[![Npm Downloads](https://img.shields.io/npm/dm/qasir-components.svg)](https://www.npmjs.com/package/qasir-components)
+[![Npm Downloads](https://img.shields.io/npm/dm/qasir.svg)](https://www.npmjs.com/package/qasir)
 
 ## Contributor
 - Adhitia Darmawan
