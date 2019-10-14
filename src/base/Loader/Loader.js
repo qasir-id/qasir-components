@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/dedupe';
-import styles from './loader.styles';
+import styles from '../loader/loader.styles';
 
 export const LOADER_COLOR = {
   GRAY: 'gray',

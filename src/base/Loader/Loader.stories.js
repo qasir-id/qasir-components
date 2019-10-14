@@ -2,7 +2,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Loader, { LOADER_COLOR, LOADER_TYPE, LOADER_SIZE } from './loader';
+import Loader, { LOADER_COLOR, LOADER_TYPE, LOADER_SIZE } from '../loader/loader';
 
 /**
  * Put here:
