@@ -1,18 +1,52 @@
 {
-  "name": "qasirc",
-  "version": "1.0.0",
-  "description": "An enterprise-class UI design language and React components implementation",
-  "main": "dist/index.js",
+  "name": "qasiralpha",
+  "version": "1.0.9",
+  "description": "An enterprise-class UI design language and React components",
+  "main": "dist",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "eslint . && jest --coverage --colors",
+    "eslint": "eslint .",
     "start": "webpack --watch",
-    "build": "webpack --mode production",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006 --ci",
+    "build:storybook": "build-storybook -s public",
+    "prepare": "npm run clean:build && npm run build && npm run clean:test",
+    "create:lib": "babel ./src --out-dir ./lib --copy-files --source-maps",
+    "clean:build": "rm -rf dist && rm -rf lib",
+    "clean:test": "rm -rf $(find ./lib -name \"__test__\")",
+    "build": "webpack --progress --color --mode=production && webpack --progress --color --mode=production && npm run create:lib",
+    "publish": "npm login publish"
   },
-  "files": [
-    "dist/*"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QasirID/qasir-components.git"
+  },
+  "keywords": [
+    "qasir",
+    "react",
+    "storybook",
+    "design",
+    "react component",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend"
   ],
+  "author": "engineering@qasir.id",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QasirID/qasir-components/issues"
+  },
+  "homepage": "https://github.com/QasirID/qasir-components#readme",
+  "dependencies": {
+    "@storybook/addon-info": "^5.2.3",
+    "antd": "^3.23.6",
+    "classnames": "^2.2.6",
+    "polished": "^3.4.1",
+    "styled-components": "^4.3.2"
+  },
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -21,50 +55,48 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@dump247/storybook-state": "^1.6.1",
-    "@storybook/addon-a11y": "^5.1.9",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-info": "^5.1.9",
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addon-storyshots": "^5.1.9",
-    "@storybook/addon-viewport": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
+    "@storybook/addon-a11y": "^5.2.3",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-knobs": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addon-notes": "^5.2.3",
+    "@storybook/addon-storyshots": "^5.2.3",
+    "@storybook/addon-viewport": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/react": "^5.2.3",
     "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
-    "cheerio": "^1.0.0-rc.3",
+    "babel-plugin-emotion": "^10.0.9",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "bvap-storybook-readme": "^1.0.16",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "expect": "^24.8.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "html-loader": "^0.5.5",
     "jest": "^24.8.0",
-    "jsdom": "^15.1.1",
+    "markdown-loader": "^5.1.0",
     "marked": "^0.7.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "storybook-addon-specifications": "^2.1.3",
-    "styled-components": "^4.3.2",
     "webpack": "^4.37.0",
+    "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/QasirID/qasir-components.git"
-  },
-  "keywords": [
-    "qasir",
-    "component",
-    "react",
-    "storybook"
-  ],
-  "author": "engineering@qasir.id",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/QasirID/qasir-components/issues"
-  },
-  "homepage": "https://github.com/QasirID/qasir-components#readme"
+  }
 }

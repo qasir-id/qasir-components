@@ -1,9 +1,35 @@
-node_modules
-yarn.lock
-package-lock.json
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Editor config
 .idea/
 .vscode/
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+
 .DS_Store
-dist/
-*.log
+/reports
+/dist
+/lib
 storybook-static/
+*coverage/
+.coverage
+*yarn.lock
+*package-lock.json

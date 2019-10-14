@@ -1,51 +1,30 @@
-import { configure as configureEnzyme } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-// import { withInfo } from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import theme from './theme';
 
-configureEnzyme({ adapter: new Adapter() });
-
-const newViewports = {
-  kindleFire2: {
-    name: 'Kindle Fire 2',
-    styles: {
-      width: '600px',
-      height: '963px',
-    },
-  },
-  kindleFireHD: {
-    name: 'Kindle Fire HD',
-    styles: {
-      width: '533px',
-      height: '801px',
-    },
-  },
-};
-
 // Addons components
 addDecorator(withA11y);
-// addDecorator(
-//   withInfo({    
-//     header: false
-//   })
-// ); 
+addDecorator(withKnobs);
+
+addDecorator(
+  withInfo({
+    header: false,
+    source: false
+  })
+);
 
 // Option defaults.
 addParameters({
   options: {    
     theme: theme,
-  },
-  viewport: { 
-    viewports: newViewports 
   }
 });
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../components', true, /\.stories\.js$/);
+const req = require.context('../src', true, /\.stories\.js$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }

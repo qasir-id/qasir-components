@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Should be a default Button 1`] = `
+<Navbar
+  onClick='' 
+  title={'Deposit'}
+  iconRight={true} 
+  imgRight=''
+  badge={0}
+  badgeCount={1}
+  toLink=''>
+</Navbar>
+`;
+
+exports[`Button component Should exist 1`] = `[Function]`;
