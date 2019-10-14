@@ -1,27 +1,26 @@
-/** @jsx jsx */
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { jsx, css } from "@emotion/core";
-import { darken } from "polished";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { darken } from 'polished';
 import classnames from 'classnames';
 
-import * as v from "../../shared/constants/variables";
-import Loader, { LOADER_COLOR } from "../Loader/Loader";
+import * as v from '../../shared/constants/variables';
+import Loader, { LOADER_COLOR } from '../loader/loader';
 
 export const BUTTON_VARIANT = {
-  primary: "primary",
-  secondary: "secondary",
-  "outline-primary": "outline-primary",
-  "outline-secondary": "outline-secondary",
-  "outline-teritary": "outline-teritary",
-  text: "text"
+  primary: 'primary',
+  secondary: 'secondary',
+  'outline-primary': 'outline-primary',
+  'outline-secondary': 'outline-secondary',
+  'outline-teritary': 'outline-teritary',
+  text: 'text'
 };
 
 export const BUTTON_SIZE = {
-  small: "small",
-  medium: "medium",
-  normal: "normal",
-  large: "large"
+  small: 'small',
+  medium: 'medium',
+  normal: 'normal',
+  large: 'large'
 };
 
 class Button extends Component {
@@ -39,13 +38,13 @@ class Button extends Component {
      * Variant of the button. Must be one of these: `primary`, `secondary`, `text-button`, or `disabled`.
      */
     variant: PropTypes.oneOf(
-      Object.keys(BUTTON_VARIANT).map(type => BUTTON_VARIANT[type])
+      Object.keys(BUTTON_VARIANT).map((type) => BUTTON_VARIANT[type])
     ),
     /**
      * Size of the button.  Must be one of these: `small`, `medium`, `normal`, or `large`.
      */
     size: PropTypes.oneOf(
-      Object.keys(BUTTON_SIZE).map(type => BUTTON_SIZE[type])
+      Object.keys(BUTTON_SIZE).map((type) => BUTTON_SIZE[type])
     ),
     /**
      * Set the button for blocking option
@@ -71,66 +70,66 @@ class Button extends Component {
   };
 
   static defaultProps = {
-    tag: "button",
+    tag: 'button',
     isBlock: false,
-    variant: "primary"
+    variant: 'primary'
   };
 
   getVariant(variant) {
     switch (variant) {
       case BUTTON_VARIANT.primary:
         return css`
-          background: ${v.red};
-          color: ${v.white};
-          border-color: ${v.red};
+          background: ${v.color.red};
+          color: ${v.color.white};
+          border-color: ${v.color.red};
           &:hover {
-            background: ${darken(0.1, v.red)};
+            background: ${darken(0.1, v.color.red)};
           }
         `;
       case BUTTON_VARIANT.secondary:
         return css`
-          background: ${v.grey};
-          color: ${v.black};
-          border-color: ${v.grey};
+          background: ${v.color.grey};
+          color: ${v.color.black};
+          border-color: ${v.color.grey};
           &:hover {
-            background: ${darken(0.1, v.grey)};
+            background: ${darken(0.1, v.color.grey)};
           }
         `;
-      case BUTTON_VARIANT["outline-primary"]:
+      case BUTTON_VARIANT['outline-primary']:
         return css`
           background: transparent;
-          color: ${v.red};
-          border-color: ${v.red};
+          color: ${v.color.red};
+          border-color: ${v.color.red};
           &:hover {
-            background: ${v.red};
-            color: ${v.white};
+            background: ${v.color.red};
+            color: ${v.color.white};
           }
         `;
-      case BUTTON_VARIANT["outline-secondary"]:
+      case BUTTON_VARIANT['outline-secondary']:
         return css`
           background: transparent;
-          color: ${v.black};
-          border-color: ${v.black};
+          color: ${v.color.black};
+          border-color: ${v.color.black};
           &:hover {
-            background: ${v.grey};
-            color: ${v.black};
-            border-color: ${v.grey};
+            background: ${v.color.grey};
+            color: ${v.color.black};
+            border-color: ${v.color.grey};
           }
         `;
-      case BUTTON_VARIANT["outline-teritary"]:
+      case BUTTON_VARIANT['outline-teritary']:
         return css`
           background: transparent;
-          color: ${v.red};
-          border-color: ${v.grey};
+          color: ${v.color.red};
+          border-color: ${v.color.grey};
           &:hover {
-            background: ${v.grey};
-            color: ${v.red};
-            border-color: ${v.grey};
+            background: ${v.color.grey};
+            color: ${v.color.red};
+            border-color: ${v.color.grey};
           }
         `;
       case BUTTON_VARIANT.text:
         return css`
-          color: ${v.black};
+          color: ${v.color.black};
           border-color: transparent;
         `;
       default:
@@ -142,24 +141,24 @@ class Button extends Component {
     switch (size) {
       case BUTTON_SIZE.small:
         return css`
-          padding: ${v.xxs}px ${v.s}px;
+          padding: ${v.spacing.xxs}px ${v.spacing.s}px;
         `;
       case BUTTON_SIZE.medium:
         return css`
-          padding: ${v.xs}px ${v.s}px;
+          padding: ${v.spacing.xs}px ${v.spacing.s}px;
         `;
       case BUTTON_SIZE.large:
         return css`
-          padding: ${v.m}px ${v.l}px;
+          padding: ${v.spacing.m}px ${v.spacing.l}px;
         `;
       default:
         return css`
-          padding: ${v.s}px ${v.m}px;
+          padding: ${v.spacing.s}px ${v.spacing.m}px;
         `;
     }
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const { isDisabled, onClick } = this.props;
 
     const btnDisabled = isDisabled;
@@ -188,14 +187,14 @@ class Button extends Component {
     } = this.props;
 
     // base styles
-    const styles = css`
+    const TagName = styled(Tag)`
       font-family: ${v.fontFamilyBase};
       font-weight: ${v.fontWeightBold};
       -webkit-appearance: none;
       text-decoration: none;
       border: 0;
       box-shadow: none;
-      font-size: ${v.fontSizeSmall}px;
+      font-size: ${v.FontSize.small}px;
       border-width: 1px;
       border-style: solid;
       cursor: pointer;
@@ -212,8 +211,8 @@ class Button extends Component {
       }
 
       &.blocking {
-          width: 100%;
-          display: block;
+        width: 100%;
+        display: block;
       }
 
       &:disabled {
@@ -243,12 +242,12 @@ class Button extends Component {
         loaderColor = LOADER_COLOR.WHITE;
         break;
       case BUTTON_VARIANT.secondary:
-      case BUTTON_VARIANT["outline-primary"]:
-      case BUTTON_VARIANT["outline-teritary"]:
+      case BUTTON_VARIANT['outline-primary']:
+      case BUTTON_VARIANT['outline-teritary']:
         loaderColor = LOADER_COLOR.RED;
         break;
-      case BUTTON_VARIANT["outline-secondary"]:
-      case BUTTON_VARIANT["text"]:
+      case BUTTON_VARIANT['outline-secondary']:
+      case BUTTON_VARIANT.text:
         loaderColor = LOADER_COLOR.GRAY;
         break;
       default:
@@ -256,27 +255,26 @@ class Button extends Component {
 
     const loaderAttr = {
       color: loaderColor,
-      size: "sm"
+      size: 'sm'
     };
 
     return (
-      <Tag
+      <TagName
         {...props}
         className={classnames(className, isBlock ? 'blocking' : undefined)}
-        css={styles}
         disabled={isDisabled}
         onClick={this.handleClick}
       >
-        {isLoading && ( 
-            <div>
-                <span className={"loader"}>
-                <Loader {...loaderAttr} />
-                </span>
-                <span style={{ opacity: 0 }}>{children}</span>
-            </div>
+        {isLoading && (
+          <div>
+            <span className={'loader'}>
+              <Loader {...loaderAttr} />
+            </span>
+            <span style={{ opacity: 0 }}>{children}</span>
+          </div>
         )}
         {!isLoading && children}
-      </Tag>
+      </TagName>
     );
   }
 }

@@ -12,7 +12,7 @@ addDecorator(withKnobs);
 addDecorator(
   withInfo({
     header: false,
-    // inline: true, 
+    source: false
   })
 );
 

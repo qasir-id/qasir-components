@@ -1,11 +1,8 @@
-/* eslint-disable react/display-name */
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import Text, { TEXT_COLOR, TEXT_VARIANT, TEXT_WEIGHT } from "./Text";
-
-import { text, select, object } from "@storybook/addon-knobs";
-import { border } from "polished";
+import { text, select, boolean } from '@storybook/addon-knobs';
+import Text, { TEXT_COLOR, TEXT_VARIANT, TEXT_WEIGHT } from './text';
 
 /**
  * Put here:
@@ -15,56 +12,73 @@ const DESCRIPTION = `
 Text
 ---
 ~~~js
-import Text from '@qasirc/Base/Text/Text';
+import Text from '@qui/lib/base;
 ~~~
 
-Examples
+or
+~~~js
+import Text from '@qui/lib/base/text;
+~~~
+
+Usage
 ~~~js
 <Text>Children</Text>
 ~~~
+
+
+| Variant     | Size | Weight |
+| ----------- | ---- | ------ |
+| hero        | 40px | bold   |
+| h1          | 24px | bold   |
+| h2          | 22px | bold   |
+| h3          | 20px | bold   |
+| h4          | 18px | bold   |
+| h5          | 16px | bold   |
+| ui-large    | 20px | normal |
+| ui-baseline | 16px | normal |
+| ui-small    | 14px | normal |
+| ui-micro    | 12px | normal |
+| ui-tiny     | 11px | normal |
 `;
 
-storiesOf("base|Text", module)
+storiesOf('base|Text', module)
   .addParameters({
     info: {
       text: DESCRIPTION
     }
   })
-  .add("all variants", () => {
-    return (
-      <div>
-        {Object.values(TEXT_VARIANT).map(variant => (
-          <div key={variant} style={{ marginBottom: 10 }}>
-            <Text variant={variant}>{variant}</Text>
-          </div>
-        ))}
-      </div>
-    );
-  })
-  .add("all text color", () => {
-    return (
-      <div style={{ minHeight: '100vh', padding: 15, backgroundColor: '#ccc' }}>
-        {Object.values(TEXT_COLOR).map(color => (
-          <div
-            key={color}
-            style={{
-              marginBottom: 10
-            }}
-          >
-            <Text color={color} weight="bold">{color}</Text>
-          </div>
-        ))}
-      </div>
-    );
-  })
-  .add("with knob", () => {
-    return (
-      <Text
-        variant={select("variant", TEXT_VARIANT, "ui-baseline")}
-        weight={select("weight", TEXT_WEIGHT)}
-        color={select("color", TEXT_COLOR, "black")}
-      >
-        {text("content", "Almost before we knew it, we had left the ground.")}
-      </Text>
-    );
-  });
+  .add('all variants', () => (
+    <div>
+      {Object.values(TEXT_VARIANT).map((variant) => (
+        <div key={variant} style={{ marginBottom: 10 }}>
+          <Text variant={variant}>{variant}</Text>
+        </div>
+      ))}
+    </div>
+  ))
+  .add('all text color', () => (
+    <div style={{ minHeight: '100vh', padding: 15, backgroundColor: '#ccc' }}>
+      {Object.values(TEXT_COLOR).map((color) => (
+        <div
+          key={color}
+          style={{
+            marginBottom: 10
+          }}
+        >
+          <Text color={color} weight="bold">
+            {color}
+          </Text>
+        </div>
+      ))}
+    </div>
+  ))
+  .add('with knob', () => (
+    <Text
+      variant={select('variant', TEXT_VARIANT, 'ui-baseline')}
+      weight={select('weight', TEXT_WEIGHT)}
+      color={select('color', TEXT_COLOR, 'black')}
+      isItalic={boolean('italic', false)}
+    >
+      {text('content', 'Almost before we knew it, we had left the ground.')}
+    </Text>
+  ));

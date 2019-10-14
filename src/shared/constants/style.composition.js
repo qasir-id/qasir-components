@@ -7,7 +7,7 @@ export const fontSubpixelRaw = {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'subpixel-antialiased',
   MozFontSmoothing: 'subpixel-antialiased',
-  OFontSmoothing: 'subpixel-antialiased',
+  OFontSmoothing: 'subpixel-antialiased'
 };
 export const fontAntialiasedRaw = {
   fontSmoothing: 'antialiased',
@@ -15,18 +15,18 @@ export const fontAntialiasedRaw = {
   WebkitFontSmoothing: 'antialiased',
   MozFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
-  OFontSmoothing: 'antialiased',
+  OFontSmoothing: 'antialiased'
 };
 export const tabFocusRaw = {
   outline: '5px auto -webkit-focus-ring-color',
-  outlineOffset: -2,
+  outlineOffset: -2
 };
 
 export const fontSubpixel = css(fontSubpixelRaw);
 
 export const fontAntialiased = css(fontAntialiasedRaw);
 
-export const hoverFocus = content => css`
+export const hoverFocus = (content) => css`
   &:focus,
   &:hover {
     ${content};
@@ -62,8 +62,12 @@ export const resetFilter = css`
 export const linkUnderline = (linkHoverColor = v.linkHoverColor) => css`
   /* Horizontal */
   /* https://stackoverflow.com/a/18064496 */
-  background: linear-gradient(to right, ${linkHoverColor} 33%, ${rgba(v.white, 0)} 0%) repeat-x
-    bottom;
+  background: linear-gradient(
+      to right,
+      ${linkHoverColor} 33%,
+      ${rgba(v.color.white, 0)} 0%
+    )
+    repeat-x bottom;
   background-size: 3px 1px;
 `;
 

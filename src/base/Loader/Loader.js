@@ -1,9 +1,7 @@
-/** @jsx jsx */
 import React, { PureComponent } from 'react';
-import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/dedupe';
-import styles from './Loader.styles';
+import styles from './loader.styles';
 
 export const LOADER_COLOR = {
   GRAY: 'gray',
@@ -11,18 +9,18 @@ export const LOADER_COLOR = {
   GREEN: 'green',
   ORANGE: 'orange',
   RED: 'red',
-  WHITE: 'white',
+  WHITE: 'white'
 };
 
 export const LOADER_SIZE = {
   SMALL: 'sm',
   MEDIUM: 'md',
-  LARGE: 'lg',
+  LARGE: 'lg'
 };
 
 export const LOADER_TYPE = {
   DOTTED: 'dotted',
-  CIRCULAR: 'circular',
+  CIRCULAR: 'circular'
 };
 
 class Loader extends PureComponent {
@@ -36,20 +34,20 @@ class Loader extends PureComponent {
     /**
      * Color of the loader. Value must be one of these: `gray`, `blue`, `green`, `orange`, `red`, or `white`.
      */
-    color: PropTypes.oneOf(Object.keys(LOADER_COLOR).map(type => LOADER_COLOR[type])),
+    color: PropTypes.oneOf(Object.keys(LOADER_COLOR).map((type) => LOADER_COLOR[type])),
     /**
      * Size of the loader. Value must be one of these: `sm`, `md`, or `lg`.
      */
-    size: PropTypes.oneOf(Object.keys(LOADER_SIZE).map(type => LOADER_SIZE[type])),
+    size: PropTypes.oneOf(Object.keys(LOADER_SIZE).map((type) => LOADER_SIZE[type])),
     /**
      * Type of the loader. The value is either `dotted` or `circular`.
      */
-    type: PropTypes.oneOf(Object.keys(LOADER_TYPE).map(type => LOADER_TYPE[type])),
+    type: PropTypes.oneOf(Object.keys(LOADER_TYPE).map((type) => LOADER_TYPE[type]))
   };
 
   static defaultProps = {
     color: LOADER_COLOR.RED,
-    type: LOADER_TYPE.DOTTED,
+    type: LOADER_TYPE.DOTTED
   };
 
   render() {
@@ -61,13 +59,13 @@ class Loader extends PureComponent {
       `c-loader--${type}`,
       {
         [`c-loader--color-${color}`]: color,
-        [`c-loader--size-${size}`]: size,
+        [`c-loader--size-${size}`]: size
       },
       className
     );
 
     if (type === LOADER_TYPE.CIRCULAR) {
-      return <div {...props} className={classes} css={styles}/>;
+      return <div {...props} className={classes} css={styles} />;
     }
 
     return (

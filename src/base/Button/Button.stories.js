@@ -1,10 +1,9 @@
 /* eslint-disable react/display-name */
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import Button, { BUTTON_VARIANT, BUTTON_SIZE } from "./Button";
-
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from '@storybook/addon-knobs';
+import Button, { BUTTON_VARIANT, BUTTON_SIZE } from './button';
 
 /**
  * Put here:
@@ -14,7 +13,13 @@ const DESCRIPTION = `
 Text
 ---
 ~~~js
-import Text from '@qasirc/Base/Button/Button';
+import Text from '@qui/lib/base';
+~~~
+
+or
+
+~~~js
+import Text from '@qui/lib/base/button';
 ~~~
 
 Examples
@@ -23,71 +28,67 @@ Examples
 ~~~
 `;
 
-storiesOf("base|Button", module)
+storiesOf('base|Button', module)
   .addParameters({
     info: {
       text: DESCRIPTION
     }
   })
-  .add("all buttons", () => {
-    return (
+  .add('all buttons', () => (
+    <div>
+      <h3>Variants</h3>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        {Object.values(BUTTON_VARIANT).map((variant) => (
+          <div key={variant} style={{ marginRight: 10 }}>
+            <Button variant={variant}>{variant}</Button>
+          </div>
+        ))}
+      </div>
+      <h3>Sizes</h3>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-end'
+        }}
+      >
+        {Object.values(BUTTON_SIZE).map((size) => (
+          <div key={size} style={{ marginRight: 10 }}>
+            <Button size={size}>{size}</Button>
+          </div>
+        ))}
+      </div>
+      <h3>Disabled</h3>
       <div>
-        <h3>Variants</h3>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          {Object.values(BUTTON_VARIANT).map(variant => (
-            <div key={variant} style={{ marginRight: 10 }}>
-              <Button variant={variant}>{variant}</Button>
-            </div>
-          ))}
+        <Button isDisabled>Disabled</Button>
+      </div>
+      <h3>Loading</h3>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-end'
+        }}
+      >
+        <div style={{ marginRight: 10 }}>
+          <Button isLoading>Disabled</Button>
         </div>
-        <h3>Sizes</h3>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "flex-end"
-          }}
-        >
-          {Object.values(BUTTON_SIZE).map(size => (
-            <div key={size} style={{ marginRight: 10 }}>
-              <Button size={size}>{size}</Button>
-            </div>
-          ))}
-        </div>
-        <h3>Disabled</h3>
         <div>
-          <Button isDisabled={true}>Disabled</Button>
-        </div>
-        <h3>Loading</h3>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "flex-end"
-          }}
-        >
-          <div style={{ marginRight: 10 }}>
-            <Button isLoading={true}>Disabled</Button>
-          </div>
-          <div>
-            <Button isLoading={true} variant="secondary">
-              Disabled
-            </Button>
-          </div>
+          <Button isLoading variant="secondary">
+            Disabled
+          </Button>
         </div>
       </div>
-    );
-  })
-  .add("with knob", () => {
-    return (
-      <Button
-        variant={select("variant", BUTTON_VARIANT, "primary")}
-        size={select("size", BUTTON_SIZE, "medium")}
-        isLoading={boolean("is loading", false)}
-        isDisabled={boolean("disabled", false)}
-        isBlock={boolean("block", false)}
-      >
-        {text("text", "Button")}
-      </Button>
-    );
-  });
+    </div>
+  ))
+  .add('with knob', () => (
+    <Button
+      variant={select('variant', BUTTON_VARIANT, 'primary')}
+      size={select('size', BUTTON_SIZE, 'medium')}
+      isLoading={boolean('is loading', false)}
+      isDisabled={boolean('disabled', false)}
+      isBlock={boolean('block', false)}
+    >
+      {text('text', 'Button')}
+    </Button>
+  ));

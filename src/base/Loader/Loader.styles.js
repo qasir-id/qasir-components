@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, css, keyframes } from '@emotion/core';
-import * as v from "../../shared/constants/variables";
+import { css, keyframes } from 'styled-components';
+import * as v from '../../shared/constants/variables';
 
 const dotPulse = keyframes`
   0%,
@@ -59,23 +58,23 @@ export default css`
     }
 
     &.c-loader--color-orange .c-loader__dot {
-      background-color: ${v.orange};
+      background-color: ${v.color.orange};
     }
 
     &.c-loader--color-blue .c-loader__dot {
-      background-color: ${v.blue};
+      background-color: ${v.color.blue};
     }
 
     &.c-loader--color-green .c-loader__dot {
-      background-color: ${v.green};
+      background-color: ${v.color.green};
     }
 
     &.c-loader--color-red .c-loader__dot {
-      background-color: ${v.red};
+      background-color: ${v.color.red};
     }
 
     &.c-loader--color-white .c-loader__dot {
-      background-color: ${v.white};
+      background-color: ${v.color.white};
     }
   }
 
@@ -127,7 +126,8 @@ export default css`
       left: 50%;
       border-radius: 50%;
       border: 2px solid transparent;
-      animation: ${circular} ${v.loaderCircularAnimationDuration} linear infinite;
+      animation: ${circular} ${v.loaderCircularAnimationDuration} linear
+        infinite;
       width: ${v.loaderCircularWidth}px;
       height: ${v.loaderCircularHeight}px;
       margin-top: -${v.loaderCircularWidth / 2}px;
@@ -143,28 +143,28 @@ export default css`
     }
 
     &.c-loader--color-orange::before {
-      border-top-color: ${v.orange};
-      border-right-color: ${v.orange};
+      border-top-color: ${v.color.orange};
+      border-right-color: ${v.color.orange};
     }
 
     &.c-loader--color-blue::before {
-      border-top-color: ${v.blue};
-      border-right-color: ${v.blue};
+      border-top-color: ${v.color.blue};
+      border-right-color: ${v.color.blue};
     }
 
     &.c-loader--color-green::before {
-      border-top-color: ${v.green};
-      border-right-color: ${v.green};
+      border-top-color: ${v.color.green};
+      border-right-color: ${v.color.green};
     }
 
     &.c-loader--color-red::before {
-      border-top-color: ${v.red};
-      border-right-color: ${v.red};
+      border-top-color: ${v.color.red};
+      border-right-color: ${v.color.red};
     }
 
     &.c-loader--color-white::before {
-      border-top-color: ${v.white};
-      border-right-color: ${v.white};
+      border-top-color: ${v.color.white};
+      border-right-color: ${v.color.white};
     }
   }
 

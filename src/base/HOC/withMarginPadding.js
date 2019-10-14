@@ -77,22 +77,22 @@ const withMarginPadding = WrappedComponent => {
       // Margin all
       if (!isNull(margin) || !isUndefined(margin)) {
         if (isBoolean(margin)) {
-          newStyles.margin = margin === true ? v.spacer : 0;
+          newStyles.margin = margin === true ? v.spacing.spacer : 0;
         } else if (isNumber(margin)) {
           newStyles.margin = margin;
         } else if (isString(margin)) {
           switch (margin) {
             case 'xs':
-              newStyles.margin = v.spacer * xs;
+              newStyles.margin = v.spacing.spacer * xs;
               break;
             case 'sm':
-              newStyles.margin = v.spacer * sm;
+              newStyles.margin = v.spacing.spacer * sm;
               break;
             case 'md':
-              newStyles.margin = v.spacer * md;
+              newStyles.margin = v.spacing.spacer * md;
               break;
             case 'lg':
-              newStyles.margin = v.spacer * lg;
+              newStyles.margin = v.spacing.spacer * lg;
               break;
           }
         }
@@ -101,22 +101,22 @@ const withMarginPadding = WrappedComponent => {
       // Margin top
       if (!isNull(marginTop) || !isUndefined(marginTop)) {
         if (isBoolean(marginTop)) {
-          newStyles.marginTop = marginTop === true ? v.spacerY : 0;
+          newStyles.marginTop = marginTop === true ? v.spacing.spacerY : 0;
         } else if (isNumber(marginTop)) {
           newStyles.marginTop = marginTop;
         } else if (isString(marginTop)) {
           switch (marginTop) {
             case 'xs':
-              newStyles.marginTop = v.spacerY * xs;
+              newStyles.marginTop = v.spacing.spacerY * xs;
               break;
             case 'sm':
-              newStyles.marginTop = v.spacerY * sm;
+              newStyles.marginTop = v.spacing.spacerY * sm;
               break;
             case 'md':
-              newStyles.marginTop = v.spacerY * md;
+              newStyles.marginTop = v.spacing.spacerY * md;
               break;
             case 'lg':
-              newStyles.marginTop = v.spacerY * lg;
+              newStyles.marginTop = v.spacing.spacerY * lg;
               break;
           }
         }
@@ -125,22 +125,22 @@ const withMarginPadding = WrappedComponent => {
       // Margin right
       if (!isNull(marginRight) || !isUndefined(marginRight)) {
         if (isBoolean(marginRight)) {
-          newStyles.marginRight = marginRight === true ? v.spacerX : 0;
+          newStyles.marginRight = marginRight === true ? v.spacing.spacerX : 0;
         } else if (isNumber(marginRight)) {
           newStyles.marginRight = marginRight;
         } else if (isString(marginRight)) {
           switch (marginRight) {
             case 'xs':
-              newStyles.marginRight = v.spacerX * xs;
+              newStyles.marginRight = v.spacing.spacerX * xs;
               break;
             case 'sm':
-              newStyles.marginRight = v.spacerX * sm;
+              newStyles.marginRight = v.spacing.spacerX * sm;
               break;
             case 'md':
-              newStyles.marginRight = v.spacerX * md;
+              newStyles.marginRight = v.spacing.spacerX * md;
               break;
             case 'lg':
-              newStyles.marginRight = v.spacerX * lg;
+              newStyles.marginRight = v.spacing.spacerX * lg;
               break;
           }
         }
@@ -149,22 +149,22 @@ const withMarginPadding = WrappedComponent => {
       // Margin bottom
       if (!isNull(marginBottom) || !isUndefined(marginBottom)) {
         if (isBoolean(marginBottom)) {
-          newStyles.marginBottom = marginBottom === true ? v.spacerY : 0;
+          newStyles.marginBottom = marginBottom === true ? v.spacing.spacerY : 0;
         } else if (isNumber(marginBottom)) {
           newStyles.marginBottom = marginBottom;
         } else if (isString(marginBottom)) {
           switch (marginBottom) {
             case 'xs':
-              newStyles.marginBottom = v.spacerY * xs;
+              newStyles.marginBottom = v.spacing.spacerY * xs;
               break;
             case 'sm':
-              newStyles.marginBottom = v.spacerY * sm;
+              newStyles.marginBottom = v.spacing.spacerY * sm;
               break;
             case 'md':
-              newStyles.marginBottom = v.spacerY * md;
+              newStyles.marginBottom = v.spacing.spacerY * md;
               break;
             case 'lg':
-              newStyles.marginBottom = v.spacerY * lg;
+              newStyles.marginBottom = v.spacing.spacerY * lg;
               break;
           }
         }
@@ -173,22 +173,22 @@ const withMarginPadding = WrappedComponent => {
       // Margin left
       if (!isNull(marginLeft) || !isUndefined(marginLeft)) {
         if (isBoolean(marginLeft)) {
-          newStyles.marginLeft = marginLeft === true ? v.spacerX : 0;
+          newStyles.marginLeft = marginLeft === true ? v.spacing.spacerX : 0;
         } else if (isNumber(marginLeft)) {
           newStyles.marginLeft = marginLeft;
         } else if (isString(marginLeft)) {
           switch (marginLeft) {
             case 'xs':
-              newStyles.marginLeft = v.spacerX * xs;
+              newStyles.marginLeft = v.spacing.spacerX * xs;
               break;
             case 'sm':
-              newStyles.marginLeft = v.spacerX * sm;
+              newStyles.marginLeft = v.spacing.spacerX * sm;
               break;
             case 'md':
-              newStyles.marginLeft = v.spacerX * md;
+              newStyles.marginLeft = v.spacing.spacerX * md;
               break;
             case 'lg':
-              newStyles.marginLeft = v.spacerX * lg;
+              newStyles.marginLeft = v.spacing.spacerX * lg;
               break;
           }
         }
@@ -197,22 +197,22 @@ const withMarginPadding = WrappedComponent => {
       // Padding all
       if (!isNull(padding) || !isUndefined(padding)) {
         if (isBoolean(padding)) {
-          newStyles.padding = padding === true ? v.spacer : 0;
+          newStyles.padding = padding === true ? v.spacing.spacer : 0;
         } else if (isNumber(padding)) {
           newStyles.padding = padding;
         } else if (isString(padding)) {
           switch (padding) {
             case 'xs':
-              newStyles.padding = v.spacer * xs;
+              newStyles.padding = v.spacing.spacer * xs;
               break;
             case 'sm':
-              newStyles.padding = v.spacer * sm;
+              newStyles.padding = v.spacing.spacer * sm;
               break;
             case 'md':
-              newStyles.padding = v.spacer * md;
+              newStyles.padding = v.spacing.spacer * md;
               break;
             case 'lg':
-              newStyles.padding = v.spacer * lg;
+              newStyles.padding = v.spacing.spacer * lg;
               break;
           }
         }
@@ -221,22 +221,22 @@ const withMarginPadding = WrappedComponent => {
       // Padding top
       if (!isNull(paddingTop) || !isUndefined(paddingTop)) {
         if (isBoolean(paddingTop)) {
-          newStyles.paddingTop = paddingTop === true ? v.spacerY : 0;
+          newStyles.paddingTop = paddingTop === true ? v.spacing.spacerY : 0;
         } else if (isNumber(paddingTop)) {
           newStyles.paddingTop = paddingTop;
         } else if (isString(paddingTop)) {
           switch (paddingTop) {
             case 'xs':
-              newStyles.paddingTop = v.spacerY * xs;
+              newStyles.paddingTop = v.spacing.spacerY * xs;
               break;
             case 'sm':
-              newStyles.paddingTop = v.spacerY * sm;
+              newStyles.paddingTop = v.spacing.spacerY * sm;
               break;
             case 'md':
-              newStyles.paddingTop = v.spacerY * md;
+              newStyles.paddingTop = v.spacing.spacerY * md;
               break;
             case 'lg':
-              newStyles.paddingTop = v.spacerY * lg;
+              newStyles.paddingTop = v.spacing.spacerY * lg;
               break;
           }
         }
@@ -245,22 +245,22 @@ const withMarginPadding = WrappedComponent => {
       // Padding right
       if (!isNull(paddingRight) || !isUndefined(paddingRight)) {
         if (isBoolean(paddingRight)) {
-          newStyles.paddingRight = paddingRight === true ? v.spacerX : 0;
+          newStyles.paddingRight = paddingRight === true ? v.spacing.spacerX : 0;
         } else if (isNumber(paddingRight)) {
           newStyles.paddingRight = paddingRight;
         } else if (isString(paddingRight)) {
           switch (paddingRight) {
             case 'xs':
-              newStyles.paddingRight = v.spacerX * xs;
+              newStyles.paddingRight = v.spacing.spacerX * xs;
               break;
             case 'sm':
-              newStyles.paddingRight = v.spacerX * sm;
+              newStyles.paddingRight = v.spacing.spacerX * sm;
               break;
             case 'md':
-              newStyles.paddingRight = v.spacerX * md;
+              newStyles.paddingRight = v.spacing.spacerX * md;
               break;
             case 'lg':
-              newStyles.paddingRight = v.spacerX * lg;
+              newStyles.paddingRight = v.spacing.spacerX * lg;
               break;
           }
         }
@@ -269,22 +269,22 @@ const withMarginPadding = WrappedComponent => {
       // Padding bottom
       if (!isNull(paddingBottom) || !isUndefined(paddingBottom)) {
         if (isBoolean(paddingBottom)) {
-          newStyles.paddingBottom = paddingBottom === true ? v.spacerY : 0;
+          newStyles.paddingBottom = paddingBottom === true ? v.spacing.spacerY : 0;
         } else if (isNumber(paddingBottom)) {
           newStyles.paddingBottom = paddingBottom;
         } else if (isString(paddingBottom)) {
           switch (paddingBottom) {
             case 'xs':
-              newStyles.paddingBottom = v.spacerY * xs;
+              newStyles.paddingBottom = v.spacing.spacerY * xs;
               break;
             case 'sm':
-              newStyles.paddingBottom = v.spacerY * sm;
+              newStyles.paddingBottom = v.spacing.spacerY * sm;
               break;
             case 'md':
-              newStyles.paddingBottom = v.spacerY * md;
+              newStyles.paddingBottom = v.spacing.spacerY * md;
               break;
             case 'lg':
-              newStyles.paddingBottom = v.spacerY * lg;
+              newStyles.paddingBottom = v.spacing.spacerY * lg;
               break;
           }
         }
@@ -293,22 +293,22 @@ const withMarginPadding = WrappedComponent => {
       // Padding left
       if (!isNull(paddingLeft) || !isUndefined(paddingLeft)) {
         if (isBoolean(paddingLeft)) {
-          newStyles.paddingLeft = paddingLeft === true ? v.spacerX : 0;
+          newStyles.paddingLeft = paddingLeft === true ? v.spacing.spacerX : 0;
         } else if (isNumber(paddingLeft)) {
           newStyles.paddingLeft = paddingLeft;
         } else if (isString(paddingLeft)) {
           switch (paddingLeft) {
             case 'xs':
-              newStyles.paddingLeft = v.spacerX * xs;
+              newStyles.paddingLeft = v.spacing.spacerX * xs;
               break;
             case 'sm':
-              newStyles.paddingLeft = v.spacerX * sm;
+              newStyles.paddingLeft = v.spacing.spacerX * sm;
               break;
             case 'md':
-              newStyles.paddingLeft = v.spacerX * md;
+              newStyles.paddingLeft = v.spacing.spacerX * md;
               break;
             case 'lg':
-              newStyles.paddingLeft = v.spacerX * lg;
+              newStyles.paddingLeft = v.spacing.spacerX * lg;
               break;
           }
         }
