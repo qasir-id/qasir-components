@@ -13,24 +13,24 @@ exports.default = {
   },
   watchOptions: {
     poll: 250,
-    ignored: /node_modules/,
-  },  
+    ignored: /node_modules/
+  },
   plugins: [
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: 'reports/report.html',
-      openAnalyzer: false,
+      openAnalyzer: false
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),    
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: false,
-    }),
+      debug: false
+    })
   ],
   module: {
     rules: [
@@ -40,23 +40,41 @@ exports.default = {
         query: {
           cacheDirectory: true,
           presets: [
-            ['@babel/preset-env', {
-              targets: {
-                browsers: ['last 2 versions', 'not safari < 11', 'not ie < 11'],
-              },
-            }],
-            '@babel/preset-react']          
-        },
-      }      
-    ],
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  browsers: [
+                    'last 2 versions',
+                    'not safari < 11',
+                    'not ie < 11'
+                  ]
+                }
+              }
+            ],
+            '@babel/preset-react'
+          ]
+        }
+      }
+    ]
   },
   resolve: {
     modules: ['node_modules', './src'],
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   },
   externals: {
     react: 'commonjs react',
     'react-dom': 'commonjs react-dom',
-    'prop-types': 'commonjs prop-types',
+    'prop-types': 'commonjs prop-types'
   }
+};
+
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/source-loader')],
+    enforce: 'pre',
+  });
+
+  return config;
 };

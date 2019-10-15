@@ -113,6 +113,17 @@ storiesOf('base|Color', module)
             <Code>v.color.orange</Code>
           </CardInfo>
         </Card>
+        <Card style={{ backgroundColor: v.color.green }}>
+          <CardInfo>
+            <Text tag="div" weight="bold" color="black">
+              GREEN
+            </Text>
+            <Text tag="p" style={{ marginTop: 5, zIndex: 10 }}>
+              HEX: {v.color.green}
+            </Text>
+            <Code>v.color.green</Code>
+          </CardInfo>
+        </Card>
       </div>
     </>
   ));
