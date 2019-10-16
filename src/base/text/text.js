@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as v from '../../shared/constants/variables';
+import * as c from '../../shared/constants/color';
 
 export const TEXT_COLOR = {
-  red: 'red',
-  black: 'black',
-  white: 'white',
-  orange: 'orange',
-  green: 'green',
-  blue: 'blue',
-  grey: 'grey'
+  alert: 'alert',
+  warning: 'warning',
+  success: 'success',
+  primary: 'primary',
+  secondary: 'secondary',
+  neutral: 'neutral',
+  muted: 'muted',
+  highlight: 'highlight'
 };
 
 export const TEXT_DECORATION = {
@@ -56,13 +58,13 @@ class Text extends Component {
      * Color of the text. Must be one of these: `red`, `black`, `white`, `orange`, `green`, `blue`, or `grey`.
      */
     color: PropTypes.oneOf(
-      Object.keys(TEXT_COLOR).map((type) => TEXT_COLOR[type])
+      Object.keys(TEXT_COLOR).map(type => TEXT_COLOR[type])
     ),
     /**
      * Specifies the appearance of decorative lines. The value is either `underline` or `line-through`.
      */
     decoration: PropTypes.oneOf(
-      Object.keys(TEXT_DECORATION).map((type) => TEXT_DECORATION[type])
+      Object.keys(TEXT_DECORATION).map(type => TEXT_DECORATION[type])
     ),
     /**
      * Set the text to italic.
@@ -77,7 +79,7 @@ class Text extends Component {
      * Variant of the text, Must be one of these: `hero`, `h1`, `h2`, `h3`, `h3`, `h4`, `h5`, `ui-large`, `ui-baseline`, `ui-small`, `ui-tiny`, `caption-tiny`, or `caption-micro`.
      */
     variant: PropTypes.oneOf(
-      Object.keys(TEXT_VARIANT).map((type) => TEXT_VARIANT[type])
+      Object.keys(TEXT_VARIANT).map(type => TEXT_VARIANT[type])
     ),
     /**
      * HTML tag of the text.
@@ -87,7 +89,7 @@ class Text extends Component {
      * Weight to the text. The value is either `medium` or `bold`.
      */
     weight: PropTypes.oneOf(
-      Object.keys(TEXT_WEIGHT).map((type) => TEXT_WEIGHT[type])
+      Object.keys(TEXT_WEIGHT).map(type => TEXT_WEIGHT[type])
     )
   };
 
@@ -96,32 +98,34 @@ class Text extends Component {
   };
 
   getColorClassName(color) {
-    const mixin = (color) => css`
+    const mixin = color => css`
       color: ${color};
     `;
 
     switch (color) {
-      case TEXT_COLOR.black:
-        return mixin(v.color.black);
-      case TEXT_COLOR.blue:
-        return mixin(v.color.blue);
-      case TEXT_COLOR.green:
-        return mixin(v.color.green);
-      case TEXT_COLOR.grey:
-        return mixin(v.color.grey);
-      case TEXT_COLOR.orange:
-        return mixin(v.color.orange);
-      case TEXT_COLOR.red:
-        return mixin(v.color.red);
-      case TEXT_COLOR.white:
-        return mixin(v.color.white);
+      case TEXT_COLOR.primary:
+        return mixin(c.color.DarkPrimary);
+      case TEXT_COLOR.success:
+        return mixin(c.color.GreenPrimary);
+      case TEXT_COLOR.alert:
+        return mixin(c.color.RedSecondary);
+      case TEXT_COLOR.warning:
+        return mixin(c.color.YellowPrimary);
+      case TEXT_COLOR.secondary:
+        return mixin(c.color.DarkSecondary);
+      case TEXT_COLOR.neutral:
+        return mixin(c.color.DarkNeutral);
+      case TEXT_COLOR.muted:
+        return mixin(c.color.LightSecondary);
+      case TEXT_COLOR.highlight:
+        return mixin(c.color.RedPrimary);
       default:
-        return false;
+        return mixin(c.color.DarkPrimary);
     }
   }
 
   getFontWeightClassName(weight) {
-    const mixin = (weight) => css`
+    const mixin = weight => css`
       font-weight: ${weight};
     `;
 
@@ -192,7 +196,7 @@ class Text extends Component {
     }
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     e.currentTarget.blur(); // Un-focus on click
   };
 
@@ -211,8 +215,9 @@ class Text extends Component {
 
     // base styles
     const TagName = styled(Tag)`
-      font-family: ${v.fontFamilyBase};
+      font-family: inherit;
       text-decoration: ${decoration};
+      font-weight: ${v.fontWeightBase};
       ${this.getFontWeightClassName(weight)};
       ${this.getColorClassName(color)};
       ${this.getVariant(variant)};
@@ -220,11 +225,7 @@ class Text extends Component {
     `;
 
     return (
-      <TagName
-        {...props}
-        className={className}
-        onClick={this.handleClick}
-      >
+      <TagName {...props} className={className} onClick={this.handleClick}>
         {children}
       </TagName>
     );

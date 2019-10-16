@@ -15,10 +15,10 @@ export const Container = styled.div`
   position: relative;
 
   &[data-error] {
-    border-color: ${v.color.red};
+    border-color: ${v.stateRedText};
 
     label {
-      color: ${v.color.red};
+      color: ${v.stateRedText};
     }
   }
 
@@ -83,7 +83,7 @@ export const Label = styled.label`
 `;
 
 export const ErrorLabel = styled.span`
-  color: ${v.color.red};
+  color: ${v.stateRedText};
   font-family: ${v.fontFamilyBase};
   display: block;
   font-size: ${v.FontSize.tiny};

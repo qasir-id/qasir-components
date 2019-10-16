@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 
 import * as Style from './toast.styles';
 import * as v from '../../shared/constants/variables';
+import * as c from '../../shared/constants/color';
 
 export const TOAST_VARIANT = {
   success: 'success',
@@ -18,15 +19,15 @@ class Toast extends PureComponent {
     switch (variant) {
       case TOAST_VARIANT.success:
         return css`
-          background: ${v.color.green};
+          background: ${c.color.GreenPrimary};
         `;
       case TOAST_VARIANT.warning:
         return css`
-          background: ${v.color.orange};
+          background: ${c.color.OrangePrimary};
         `;
       case TOAST_VARIANT.danger:
         return css`
-          background: ${v.color.red};
+          background: ${c.color.RedSecondary};
         `;
       default:
         return false;
@@ -49,7 +50,7 @@ class Toast extends PureComponent {
       <Style.Wrapper className={className} {...props}>
         <TransitionGroup>
           {open && (
-            <CSSTransition timeout={300} classNames="anim" className="asd">
+            <CSSTransition timeout={300} classNames="anim">
               <Container>{children}</Container>
             </CSSTransition>
           )}

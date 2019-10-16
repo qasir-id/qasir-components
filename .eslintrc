@@ -52,7 +52,8 @@
     "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
     "react/no-unused-state": "warn",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "no-undef": "off"
   },
   "globals": {
     "document": true,

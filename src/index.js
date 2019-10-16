@@ -6,3 +6,4 @@ export { default as SvgIcon } from './base/svg-icon';
 export { default as Input } from './base/input';
 export { default as Select } from './base/select';
 export { Row, Col } from './base/grid';
+export { default as Toast } from './base/toast';

@@ -5,6 +5,7 @@ import { darken } from 'polished';
 import classnames from 'classnames';
 
 import * as v from '../../shared/constants/variables';
+import * as c from '../../shared/constants/color';
 import Loader, { LOADER_COLOR } from '../loader/loader';
 
 export const BUTTON_VARIANT = {
@@ -79,57 +80,57 @@ class Button extends Component {
     switch (variant) {
       case BUTTON_VARIANT.primary:
         return css`
-          background: ${v.color.red};
-          color: ${v.color.white};
-          border-color: ${v.color.red};
+          background: ${c.color.RedPrimary};
+          color: ${c.color.LightPrimary};
+          border-color: ${c.color.RedPrimary};
           &:hover {
-            background: ${darken(0.1, v.color.red)};
+            background: ${darken(0.1, c.color.RedPrimary)};
           }
         `;
       case BUTTON_VARIANT.secondary:
         return css`
-          background: ${v.color.grey};
-          color: ${v.color.black};
-          border-color: ${v.color.grey};
+          background: ${c.color.DarkSecondary};
+          color: ${c.color.DarkPrimary};
+          border-color: ${c.color.DarkSecondary};
           &:hover {
-            background: ${darken(0.1, v.color.grey)};
+            background: ${darken(0.1, c.color.DarkSecondary)};
           }
         `;
       case BUTTON_VARIANT['outline-primary']:
         return css`
           background: transparent;
-          color: ${v.color.red};
-          border-color: ${v.color.red};
+          color: ${c.color.RedPrimary};
+          border-color: ${c.color.RedPrimary};
           &:hover {
-            background: ${v.color.red};
-            color: ${v.color.white};
+            background: ${c.color.RedPrimary};
+            color: ${c.color.LightPrimary};
           }
         `;
       case BUTTON_VARIANT['outline-secondary']:
         return css`
           background: transparent;
-          color: ${v.color.black};
-          border-color: ${v.color.black};
+          color: ${c.color.DarkPrimary};
+          border-color: ${c.color.DarkPrimary};
           &:hover {
-            background: ${v.color.grey};
-            color: ${v.color.black};
-            border-color: ${v.color.grey};
+            background: ${c.color.DarkSecondary};
+            color: ${c.color.DarkPrimary};
+            border-color: ${c.color.DarkSecondary};
           }
         `;
       case BUTTON_VARIANT['outline-teritary']:
         return css`
           background: transparent;
-          color: ${v.color.red};
-          border-color: ${v.color.grey};
+          color: ${c.color.RedPrimary};
+          border-color: ${c.color.DarkSecondary};
           &:hover {
-            background: ${v.color.grey};
-            color: ${v.color.red};
-            border-color: ${v.color.grey};
+            background: ${c.color.DarkSecondary};
+            color: ${c.color.RedPrimary};
+            border-color: ${c.color.DarkSecondary};
           }
         `;
       case BUTTON_VARIANT.text:
         return css`
-          color: ${v.color.black};
+          color: ${c.color.DarkPrimary};
           border-color: transparent;
         `;
       default:
@@ -188,8 +189,8 @@ class Button extends Component {
 
     // base styles
     const TagName = styled(Tag)`
-      font-family: ${v.fontFamilyBase};
-      font-weight: ${v.fontWeightBold};
+      font-family: inherit;
+      font-weight: ${v.fontWeightMedium};
       -webkit-appearance: none;
       text-decoration: none;
       border: 0;
@@ -216,7 +217,9 @@ class Button extends Component {
       }
 
       &:disabled {
-        opacity: 0.65;
+        background: ${c.color.DarkSecondary};
+        border-color: ${c.color.DarkSecondary};
+        color: ${c.color.LightPrimary};
         cursor: not-allowed;
       }
 

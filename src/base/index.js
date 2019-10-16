@@ -6,3 +6,5 @@ export { default as SvgIcon } from './svg-icon';
 export { default as Input } from './input';
 export { default as Select } from './select';
 export { Row, Col } from './grid';
+export { default as Toast } from './toast';
+export { Modal, ModalBody, ModalHeader, ModalFooter } from './modal';

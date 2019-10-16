@@ -37,7 +37,7 @@ storiesOf('base|Toast', module)
       open={boolean('open', true)}
       variant={select('variant', TOAST_VARIANT, 'success')}
     >
-      <span style={{ fontSize: 14 }}>
+      <span style={{ fontSize: 14, fontWeight: 600 }}>
         {text('message', 'Hello, world! This is a toast message.')}
       </span>
     </Toast>

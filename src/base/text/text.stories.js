@@ -49,7 +49,7 @@ storiesOf('base|Text', module)
   })
   .add('all variants', () => (
     <div>
-      {Object.values(TEXT_VARIANT).map((variant) => (
+      {Object.values(TEXT_VARIANT).map(variant => (
         <div key={variant} style={{ marginBottom: 10 }}>
           <Text variant={variant}>{variant}</Text>
         </div>
@@ -57,26 +57,24 @@ storiesOf('base|Text', module)
     </div>
   ))
   .add('all text color', () => (
-    <div style={{ minHeight: '100vh', padding: 15, backgroundColor: '#ccc' }}>
-      {Object.values(TEXT_COLOR).map((color) => (
+    <>
+      {Object.values(TEXT_COLOR).map(color => (
         <div
           key={color}
           style={{
             marginBottom: 10
           }}
         >
-          <Text color={color} weight="bold">
-            {color}
-          </Text>
+          <Text color={color}>{color}</Text>
         </div>
       ))}
-    </div>
+    </>
   ))
   .add('with knob', () => (
     <Text
       variant={select('variant', TEXT_VARIANT, 'ui-baseline')}
       weight={select('weight', TEXT_WEIGHT)}
-      color={select('color', TEXT_COLOR, 'black')}
+      color={select('color', TEXT_COLOR, 'primary')}
       isItalic={boolean('italic', false)}
     >
       {text('content', 'Almost before we knew it, we had left the ground.')}
