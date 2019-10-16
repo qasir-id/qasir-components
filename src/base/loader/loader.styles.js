@@ -1,5 +1,6 @@
 import { css, keyframes } from 'styled-components';
 import * as v from '../../shared/constants/variables';
+import * as c from '../../shared/constants/color';
 
 const dotPulse = keyframes`
   0%,
@@ -54,11 +55,11 @@ export default css`
   /* Color */
   &.c-loader--dotted {
     &.c-loader--color-gray .c-loader__dot {
-      background-color: ${v.gray};
+      background-color: ${c.color.DarkSecondary};
     }
 
     &.c-loader--color-orange .c-loader__dot {
-      background-color: ${v.color.orange};
+      background-color: ${c.color.OrangePrimary};
     }
 
     &.c-loader--color-blue .c-loader__dot {
@@ -66,15 +67,15 @@ export default css`
     }
 
     &.c-loader--color-green .c-loader__dot {
-      background-color: ${v.color.green};
+      background-color: ${c.color.GreenPrimary};
     }
 
     &.c-loader--color-red .c-loader__dot {
-      background-color: ${v.color.red};
+      background-color: ${c.color.RedPrimary};
     }
 
     &.c-loader--color-white .c-loader__dot {
-      background-color: ${v.color.white};
+      background-color: ${c.color.LightPrimary};
     }
   }
 
@@ -138,13 +139,13 @@ export default css`
   /* Color */
   &.c-loader--circular {
     &.c-loader--color-gray::before {
-      border-top-color: ${v.gray};
-      border-right-color: ${v.gray};
+      border-top-color: ${c.color.DarkSecondary};
+      border-right-color: ${c.color.DarkSecondary};
     }
 
     &.c-loader--color-orange::before {
-      border-top-color: ${v.color.orange};
-      border-right-color: ${v.color.orange};
+      border-top-color: ${c.color.OrangePrimary};
+      border-right-color: ${c.color.OrangePrimary};
     }
 
     &.c-loader--color-blue::before {
@@ -153,18 +154,18 @@ export default css`
     }
 
     &.c-loader--color-green::before {
-      border-top-color: ${v.color.green};
-      border-right-color: ${v.color.green};
+      border-top-color: ${c.color.GreenPrimary};
+      border-right-color: ${c.color.GreenPrimary};
     }
 
     &.c-loader--color-red::before {
-      border-top-color: ${v.color.red};
-      border-right-color: ${v.color.red};
+      border-top-color: ${c.color.RedPrimary};
+      border-right-color: ${c.color.RedPrimary};
     }
 
     &.c-loader--color-white::before {
-      border-top-color: ${v.color.white};
-      border-right-color: ${v.color.white};
+      border-top-color: ${c.color.LightPrimary};
+      border-right-color: ${c.color.LightPrimary};
     }
   }
 

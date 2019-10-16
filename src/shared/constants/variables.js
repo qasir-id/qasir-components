@@ -160,8 +160,45 @@ export const closeFontWeight = fontWeightBold;
 export const closeColor = '#000';
 export const closeTextShadow = '0 1px 0 #fff';
 
+// Loader
+// ------------------------------------------------------------------------------------------
+export const loaderCircularWidth = 18;
+export const loaderCircularHeight = loaderCircularWidth;
+export const loaderCircularWidthSm = 16;
+export const loaderCircularHeightSm = loaderCircularWidthSm;
+export const loaderCircularWidthMd = 20;
+export const loaderCircularHeightMd = loaderCircularWidthMd;
+export const loaderCircularWidthLg = 22;
+export const loaderCircularHeightLg = loaderCircularWidthLg;
+
+export const loaderCircularAnimationDuration = '450ms';
+
 // Forms
 // ------------------------------------------------------------------------------------------
+
+export const inputFontSize = fontSizeBase;
 export const inputPaddingX = spacing.m + 2;
 export const inputPaddingY = spacing.s + 2;
 export const inputLineHeight = lineHeightBase;
+
+export const inputBg = color.white;
+export const inputBgDisabled = color.grey;
+export const inputBgFocus = inputBg;
+
+export const inputColor = color.white;
+export const inputColorFocus = inputColor;
+export const inputColorPlaceholder = color.grey;
+export const inputBorderColor = color.grey;
+export const inputBorderFocus = darken(0.08, color.grey);
+export const inputBorderWidth = borderWidth;
+export const inputBtnBorderWidth = borderWidth; // For form controls and buttons
+export const inputBoxShadow = 'inset 0 1px 1px rgba(0, 0, 0, .075)';
+export const inputBoxShadowFocus = `${inputBoxShadow}, 0 0 8px rgba(102, 175, 233, .6)`;
+
+export const inputIconSize = 18;
+export const inputErrorBorderColor = '#ffaaa8';
+export const inputErrorIconSize = 19;
+
+export const inputBorderRadius = borderRadius;
+export const inputBorderRadiusLg = borderRadiusLg;
+export const inputBorderRadiusSm = borderRadiusSm;
