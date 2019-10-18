@@ -12,6 +12,17 @@ import Switcher from './switcher';
 const DESCRIPTION = `
 Switcher
 ---
+~~~js
+import Switcher from 'qasir/lib/base;
+~~~
+or
+~~~js
+import Switcher from 'qasir/lib/base/switcher;
+~~~
+
+Usage
+~~~js
+<Switcher {...props}/>
 `;
 
 storiesOf('form|Switcher', module)
