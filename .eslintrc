@@ -53,7 +53,9 @@
     "react/prop-types": "off",
     "react/no-unused-state": "warn",
     "arrow-parens": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "react/state-in-constructor": "off",
+    "no-prototype-builtins": "off"
   },
   "globals": {
     "document": true,
