@@ -55,7 +55,8 @@
     "arrow-parens": "off",
     "no-undef": "off",
     "react/state-in-constructor": "off",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "no-plusplus": "off"
   },
   "globals": {
     "document": true,

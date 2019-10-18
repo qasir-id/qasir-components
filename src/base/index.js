@@ -8,3 +8,6 @@ export { default as Select } from './select';
 export { Row, Col } from './grid';
 export { default as Toast } from './toast';
 export { Modal, ModalBody, ModalHeader, ModalFooter } from './modal';
+export { RadioButton } from './radio-button';
+export { RadioButtonGroup } from './radio-button-group';
+export { Switcher } from './switcher';

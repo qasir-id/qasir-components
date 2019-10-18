@@ -90,7 +90,7 @@ class Input extends PureComponent {
         {error && errorMessage !== '' && (
           <Text
             variant="ui-tiny"
-            color="red"
+            color="alert"
             tag="div"
             style={{ paddingLeft: 18, paddingTop: 8 }}
           >
