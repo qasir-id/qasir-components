@@ -49,14 +49,16 @@ storiesOf('base|Empty State', module)
     />
   ))
   .add('With Other Component', () => (
-    <EmptyState
-      img2x={text('Image Retina', ImgDefaultHd)}
-      img={text('Image Default', ImgDefault)}
-      title={text('Title', 'Troli Kamu Masih Kosong')}
-      subtitle={text(
-        'Subtitle',
-        'Yuk, isi troli kamu supaya troli kamu ga sedih lagi :)'
-      )}
-      otherComponent={<Button>test</Button>}
-    />
+    <div style={{ maxWidth: 400, margin: 'auto' }}>
+      <EmptyState
+        img2x={text('Image Retina', ImgDefaultHd)}
+        img={text('Image Default', ImgDefault)}
+        title={text('Title', 'Troli Kamu Masih Kosong')}
+        subtitle={text(
+          'Subtitle',
+          'Yuk, isi troli kamu supaya troli kamu ga sedih lagi :)'
+        )}
+        otherComponent={<Button isBlock>Button</Button>}
+      />
+    </div>
   ));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 
 import InfoBox, { INFO_BOX_VARIANT } from './info-box';
 
@@ -37,7 +37,7 @@ storiesOf('base|Info Box ', module)
   })
   .add('With Knobs', () => (
     <InfoBox
-      variant='alert'
+      variant={select('variant', INFO_BOX_VARIANT, 'alert')}
       message={text('Message', 'This is the example of InfoBox component')}
       clickMessage={text('clickMessage', 'Click Me!')}
       onClick={() => alert('test')}
@@ -50,11 +50,10 @@ storiesOf('base|Info Box ', module)
         <div key={variant} style={{ marginBottom: 15 }}>
           <InfoBox
             variant={variant}
-            message='This is the example of InfoBox component'
-            clickMessage='Click Me!'
+            message="This is the example of InfoBox component"
+            clickMessage="Click Me!"
             icon={<Notification />}
           />
-          <br />
           <br />
         </div>
       ))}

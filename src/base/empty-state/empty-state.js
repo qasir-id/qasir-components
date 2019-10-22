@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Text from '../text';
 import * as v from '../../shared/constants/variables';
+
+import Text from '../text';
 
 const Wrapper = styled.div`
   width: 767px;
@@ -34,14 +35,14 @@ class EmptyState extends PureComponent {
           width={imgWidth}
         />
         <Text
-          variant='ui-small'
-          weight='bold'
-          tag='h2'
+          variant="ui-small"
+          weight="bold"
+          tag="h2"
           style={{ marginBottom: v.spacing.xs }}
         >
           {title}
         </Text>
-        <Text variant='ui-small' tag='span'>
+        <Text variant="ui-small" tag="span">
           {subtitle}
         </Text>
         {otherComponent && <OtherWrapper>{otherComponent}</OtherWrapper>}
