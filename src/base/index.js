@@ -12,3 +12,4 @@ export { default as RadioButton } from './radio-button';
 export { default as RadioButtonGroup } from './radio-button-group';
 export { default as Switcher } from './switcher';
 export { default as Card } from './card';
+export { default as Badge } from './badge';

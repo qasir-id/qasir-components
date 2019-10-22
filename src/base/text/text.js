@@ -55,7 +55,7 @@ class Text extends Component {
      */
     className: PropTypes.string,
     /**
-     * Color of the text. Must be one of these: `red`, `black`, `white`, `orange`, `green`, `blue`, or `grey`.
+     * Color of the text. Must be one of these: `alert`,`warning`,`success`,`primary`,`secondary`,`neutral`,`muted` or `highlight`
      */
     color: PropTypes.oneOf(
       Object.keys(TEXT_COLOR).map(type => TEXT_COLOR[type])
@@ -94,7 +94,8 @@ class Text extends Component {
   };
 
   static defaultProps = {
-    tag: 'span'
+    tag: 'span',
+    color: 'primary'
   };
 
   getColorClassName(color) {
