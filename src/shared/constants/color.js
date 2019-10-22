@@ -23,6 +23,30 @@ export const Black30 = '#818491';
 export const Black20 = '#B0B2BB';
 export const Black05 = '#E3E5ED';
 
+//Green
+export const Green50 = '#00875a';
+export const Green05 = '#e8fef5';
+
+//Blue
+export const Blue50 = '#0264c8';
+export const Blue05 = '#ecf8ff';
+
+// General Color
+export const RedPrimary = RedOrange40;
+export const RedSecondary = RedOrange50;
+export const OrangePrimary = Yellow50;
+export const OrangeSecondary = Yellow60;
+export const DarkPrimary = Black90;
+export const DarkStain = Black40;
+export const DarkNeutral = Black20;
+export const DarkSecondary = Black05;
+export const LightPrimary = '#FFFFFF';
+export const LightSecondary = '#F2F4F7';
+export const GreenPrimary1 = '#33CC59';
+export const YellowPrimary = '#F0E936';
+export const BluePrimary = '#03A9F4';
+export const BlueDark = '#0645AD';
+
 export const color = {
   RedPrimary: RedOrange40,
   RedSecondary: RedOrange50,
