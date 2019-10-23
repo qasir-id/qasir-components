@@ -49,7 +49,7 @@ class InputPassword extends PureComponent {
   render() {
     const suffixContent = (
       <Icon onClick={this.toggleShow}>
-        {this.state.hidden ? <Visible /> : <Invisible />}
+        {!this.state.hidden ? <Visible /> : <Invisible />}
       </Icon>
     );
     return (
