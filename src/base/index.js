@@ -13,3 +13,7 @@ export { default as RadioButtonGroup } from './radio-button-group';
 export { default as Switcher } from './switcher';
 export { default as Card } from './card';
 export { default as Badge } from './badge';
+export { default as Carousel } from './carousel';
+export { default as InfoBox } from './info-box';
+export { default as InputPassword } from './input-password';
+export { default as EmptyState } from './empty-state';
