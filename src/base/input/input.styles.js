@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import * as v from '../../shared/constants/variables';
+import * as c from '../../shared/constants/color';
 import * as ease from '../../shared/constants/easing';
 
 export const Container = styled.div`
@@ -11,6 +12,7 @@ export const Container = styled.div`
   border-spacing: 0;
   border-collapse: separate;
   width: 100%;
+  overflow: hidden;
 
   &[data-error] {
     border-color: ${v.stateRedText};
@@ -26,13 +28,17 @@ export const InputTag = styled.input`
   background: ${v.inputBg};
   padding: ${v.inputPaddingY}px ${v.inputPaddingX}px;
   width: 100%;
-  border-radius: ${v.inputBorderRadiusLg}px;
+  /* border-radius: ${v.inputBorderRadiusLg}px; */
   border: 0;
   transition: border 0.3s ${ease.easeInQuad};
   font-family: ${v.fontFamilyBase};
   position: relative;
   color: ${v.color.black};
   display: table-cell;
+
+  &:disabled {
+    background: ${c.LightSecondary};
+  }
 
   &[type='password'] {
     letter-spacing: 5px;
@@ -52,7 +58,6 @@ export const InputTag = styled.input`
     & ~ label {
       top: -10px;
       font-size: 14px;
-      /* color: #b0b2bb; */
       background: white;
       padding: 0 ${v.spacing.xs}px;
       left: ${v.spacing.xs}px;

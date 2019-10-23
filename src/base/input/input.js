@@ -81,7 +81,7 @@ class Input extends PureComponent {
             placeholder={variant === 'normal' ? label : undefined}
             style={addonStyle}
           />
-          {variant === 'normal' && suffix && <Suff>{suffix}</Suff>}
+          {suffix && <Suff>{suffix}</Suff>}
           {variant === 'material' && (
             <Label data-active={active}>{label}</Label>
           )}
