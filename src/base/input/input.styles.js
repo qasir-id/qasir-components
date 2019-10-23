@@ -12,7 +12,8 @@ export const Container = styled.div`
   border-spacing: 0;
   border-collapse: separate;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
 
   &[data-error] {
     border-color: ${v.stateRedText};
@@ -28,7 +29,7 @@ export const InputTag = styled.input`
   background: ${v.inputBg};
   padding: ${v.inputPaddingY}px ${v.inputPaddingX}px;
   width: 100%;
-  /* border-radius: ${v.inputBorderRadiusLg}px; */
+  border-radius: ${v.inputBorderRadiusLg}px;
   border: 0;
   transition: border 0.3s ${ease.easeInQuad};
   font-family: ${v.fontFamilyBase};

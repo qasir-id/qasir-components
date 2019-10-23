@@ -59,6 +59,8 @@ class Input extends PureComponent {
       variant,
       prefix,
       suffix,
+      maxLength,
+      showCharacterCount,
       ...props
     } = this.props;
 
@@ -80,12 +82,24 @@ class Input extends PureComponent {
             value={this.state.currVal}
             placeholder={variant === 'normal' ? label : undefined}
             style={addonStyle}
+            maxLength={maxLength}
           />
           {suffix && <Suff>{suffix}</Suff>}
           {variant === 'material' && (
             <Label data-active={active}>{label}</Label>
           )}
         </Container>
+
+        {showCharacterCount && (
+          <Text
+            tag="div"
+            variant="ui-tiny"
+            color="neutral"
+            style={{ textAlign: 'right', marginTop: 4 }}
+          >
+            {this.state.characterCount} / {maxLength}
+          </Text>
+        )}
 
         {error && errorMessage !== '' && (
           <Text
@@ -142,7 +156,12 @@ Input.propTypes = {
   /**
    * Content after input
    */
-  suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /**
+   * Set maximum character length if any
+   */
+  maxLength: PropTypes.number,
+  showCharacterCount: PropTypes.bool
 };
 
 Input.defaultProps = {
