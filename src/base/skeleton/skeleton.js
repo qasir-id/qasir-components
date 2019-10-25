@@ -8,9 +8,7 @@ class Skeleton extends PureComponent {
   render() {
     const { width, height, radius } = this.props;
     return (
-      <SkeletonContainer
-        style={{ width, height, borderRadius: radius }}
-      />
+      <SkeletonContainer style={{ width, height, borderRadius: radius }} />
     );
   }
 }
@@ -28,24 +26,27 @@ Skeleton.defaultProps = {
 };
 
 const shineLines = keyframes`
-    0% {
-        background-position: -100px
+   0% {
+      background-position: -468px 0;
     }
-
-    40%, 100% {
-        background-position: 140px
+    
+    100% {
+      background-position: 468px 0; 
     }
 `;
 
 const SkeletonContainer = styled.div`
-  background-image: linear-gradient(
-    90deg,
-    #f4f4f4 0px,
-    rgba(229, 229, 229, 0.8) 40px,
-    #f4f4f4 80px
-  );
-  background-size: 500px;
-  animation: ${shineLines} 2s infinite ease-out;
+background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; 
+  animation-iteration-count: infinite;
+  animation-name: ${shineLines};
+  animation-timing-function: linear;
+
+  margin-bottom: ${v.spacing.s}px;
 `;
 
 export default Skeleton;
