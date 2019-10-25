@@ -50,6 +50,7 @@ class Card extends PureComponent {
       padding: ${v.spacing.s}px;
       ${this.getElevation(elevation)};
       border-radius: ${v.borderRadiusLg}px;
+      overflow: hidden;
     `;
 
     return (
