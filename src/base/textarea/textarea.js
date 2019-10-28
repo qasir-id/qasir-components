@@ -1,22 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  InputTag,
-  Wrapper,
-  Label,
-  Container,
-  Pref,
-  Suff
-} from './input.styles';
 import Text from '../text';
 
-export const VARIANT = {
-  normal: 'normal',
-  material: 'material'
-};
+import * as Style from './textarea.styles';
 
-class Input extends PureComponent {
+class Textarea extends PureComponent {
   constructor(props) {
     super();
     this.state = {
@@ -25,22 +14,10 @@ class Input extends PureComponent {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, props) {
-    if (props.value !== nextProps.value) {
-      const state = {
-        currVal: nextProps.value
-      };
-      // Update character count if props value change
-      if (props.showCharacterCount) {
-        state.characterCount = nextProps.value.length;
-      }
-      //   setState(state);
-    }
-  }
-
   handleInputChange = e => {
     this.setState({
-      currVal: e.target.value
+      currVal: e.target.value,
+      characterCount: e.target.value.length
     });
   };
 
@@ -49,47 +26,29 @@ class Input extends PureComponent {
 
     const {
       className,
-      type,
+      rows,
       label,
-      placeholder,
       value,
       isDisabled,
       error,
       errorMessage,
-      variant,
-      prefix,
-      suffix,
       maxLength,
       showCharacterCount,
       ...props
     } = this.props;
-
-    const addonStyle = {
-      paddingLeft: prefix && variant === 'normal' ? 0 : undefined,
-      paddingRight: prefix && variant === 'normal' ? 0 : undefined
-    };
-
     return (
-      <Wrapper>
-        <Container data-error={error ? 'true' : undefined}>
-          {variant === 'normal' && prefix && <Pref>{prefix}</Pref>}
-          <InputTag
-            {...props}
+      <>
+        <Style.Container {...props} data-error={error ? 'true' : undefined}>
+          <Style.Field
             className={className}
-            type={type}
-            onChange={this.handleInputChange}
             disabled={isDisabled}
+            onChange={this.handleInputChange}
             value={this.state.currVal}
-            placeholder={variant === 'normal' ? label : undefined}
-            style={addonStyle}
+            rows={rows}
             maxLength={maxLength}
           />
-          {suffix && <Suff>{suffix}</Suff>}
-          {variant === 'material' && (
-            <Label data-active={active}>{label}</Label>
-          )}
-        </Container>
-
+          <Style.Label data-active={active}>{label}</Style.Label>
+        </Style.Container>
         {showCharacterCount && (
           <Text
             tag="div"
@@ -100,7 +59,6 @@ class Input extends PureComponent {
             {this.state.characterCount} / {maxLength}
           </Text>
         )}
-
         {error && errorMessage !== '' && (
           <Text
             variant="ui-tiny"
@@ -111,32 +69,28 @@ class Input extends PureComponent {
             {errorMessage}
           </Text>
         )}
-      </Wrapper>
+      </>
     );
   }
 }
 
-Input.propTypes = {
+Textarea.propTypes = {
   /**
    * Class name of the outer wrapper.
    */
   className: PropTypes.string,
   /**
-   * HTML type of input, example: `text`, `email` or `password`
-   */
-  type: PropTypes.string,
-  /**
    * Input label, if not empty this props will change default placeholder
    */
   label: PropTypes.string,
   /**
-   * Variant of the text, Must be one of these: `material` or `normal`.
-   */
-  variant: PropTypes.oneOf(Object.keys(VARIANT).map(type => VARIANT[type])),
-  /**
    * Set input default value
    */
   value: PropTypes.string,
+  /**
+   * Specify textarea row height
+   */
+  rows: PropTypes.number,
   /**
    * Set input to disable state
    */
@@ -150,31 +104,21 @@ Input.propTypes = {
    */
   errorMessage: PropTypes.string,
   /**
-   * Content before input
-   */
-  prefix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  /**
-   * Content after input
-   */
-  suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  /**
    * Set maximum character length if any
    */
   maxLength: PropTypes.number,
   showCharacterCount: PropTypes.bool
 };
 
-Input.defaultProps = {
+Textarea.defaultProps = {
   className: undefined,
-  variant: 'material',
-  type: 'text',
+  rows: 2,
   label: undefined,
   value: '',
   isDisabled: false,
   error: false,
   errorMessage: 'Wajib diisi',
-  prefix: undefined,
-  suffix: undefined
+  showCharacterCount: false
 };
 
-export default Input;
+export default Textarea;

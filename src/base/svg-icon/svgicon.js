@@ -29,21 +29,19 @@ const defaultProps = {
 function SvgPlaceholder(props) {
   const { width, height, fill, stroke, style } = props;
   const backgroundColor = fill || stroke;
-  const placeholderStyle = Object.assign(
-    {
-      width,
-      height,
-      backgroundColor,
-      opacity: 0.3,
-      display: 'inline-block',
-      borderRadius: '25%'
-    },
-    style
-  );
+  const placeholderStyle = {
+    width,
+    height,
+    backgroundColor,
+    opacity: 0.3,
+    display: 'inline-block',
+    borderRadius: '25%',
+    ...style
+  };
 
   let className = 'svg-icons';
   if (props.className) {
-    className += ' ' + props.className;
+    className += ` ${props.className}`;
   }
 
   return <span className={className} style={placeholderStyle} />;
