@@ -42,8 +42,8 @@ storiesOf('base|Tooltip', module)
       }}
     >
       <Tooltip
-        text='tooltip'
-        textTooltip='ini adalah isi tooltip-nya.'
+        text="tooltip"
+        textTooltip="ini adalah isi tooltip-nya."
         position={select('position', TOOLTIP_POSITION, 'right')}
       />
     </div>
@@ -61,8 +61,8 @@ storiesOf('base|Tooltip', module)
           }}
         >
           <Tooltip
-            text='tooltip'
-            textTooltip='ini adalah isi tooltip-nya.'
+            text={position}
+            textTooltip="ini adalah isi tooltip-nya."
             position={position}
           />
           <br />

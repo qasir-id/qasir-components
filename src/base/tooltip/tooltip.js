@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-import * as v from '../../shared/constants/variables';
-import * as c from '../../shared/constants/color';
-import * as e from '../../shared/constants/easing';
-
 export const TOOLTIP_POSITION = {
   left: 'left',
   right: 'right',
@@ -84,6 +80,7 @@ class Tooltip extends PureComponent {
         return false;
     }
   }
+
   render() {
     const { text, textTooltip, position, ...props } = this.props;
     const Tooltiptext = styled.div`
