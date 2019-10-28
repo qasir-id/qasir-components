@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import * as Style from './checkbox.styles';
 
+import Text from '../text';
+
 const Checkbox = React.forwardRef(
   (
     {
@@ -13,11 +15,13 @@ const Checkbox = React.forwardRef(
       hideLabel,
       wrapperClassName,
       title = '',
+      error,
+      errorMessage,
       ...other
     },
     ref
   ) => (
-    <Style.Wrapper>
+    <Style.Wrapper data-error={error ? 'true' : undefined}>
       <input
         {...other}
         type="checkbox"
@@ -39,6 +43,16 @@ const Checkbox = React.forwardRef(
       <Style.Label className="label" htmlFor={id} title={title || null}>
         {!hideLabel && <Style.LabelContent>{labelText}</Style.LabelContent>}
       </Style.Label>
+      {error && errorMessage !== '' && (
+        <Text
+          variant="ui-tiny"
+          color="alert"
+          tag="div"
+          style={{ paddingLeft: 36, paddingTop: 4 }}
+        >
+          {errorMessage}
+        </Text>
+      )}
     </Style.Wrapper>
   )
 );
@@ -99,13 +113,23 @@ Checkbox.propTypes = {
   /**
    * The CSS class name to be placed on the wrapping element
    */
-  wrapperClassName: PropTypes.string
+  wrapperClassName: PropTypes.string,
+  /**
+   * Set input to error
+   */
+  error: PropTypes.bool,
+  /**
+   * Error message text
+   */
+  errorMessage: PropTypes.string
 };
 
 Checkbox.defaultProps = {
   onChange: () => {},
   indeterminate: false,
-  hideLabel: false
+  hideLabel: false,
+  error: false,
+  errorMessage: 'Wajib diisi'
 };
 
 export default Checkbox;

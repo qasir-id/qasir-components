@@ -19,6 +19,7 @@ class Textarea extends PureComponent {
       currVal: e.target.value,
       characterCount: e.target.value.length
     });
+    this.props.onChange && this.props.onChange(e);
   };
 
   render() {
@@ -38,14 +39,16 @@ class Textarea extends PureComponent {
     } = this.props;
     return (
       <>
-        <Style.Container {...props} data-error={error ? 'true' : undefined}>
+        <Style.Container data-error={error ? 'true' : undefined}>
           <Style.Field
+            {...props}
             className={className}
             disabled={isDisabled}
             onChange={this.handleInputChange}
             value={this.state.currVal}
             rows={rows}
             maxLength={maxLength}
+            ref={this.props.innerRef}
           />
           <Style.Label data-active={active}>{label}</Style.Label>
         </Style.Container>
@@ -107,7 +110,8 @@ Textarea.propTypes = {
    * Set maximum character length if any
    */
   maxLength: PropTypes.number,
-  showCharacterCount: PropTypes.bool
+  showCharacterCount: PropTypes.bool,
+  onChange: PropTypes.func
 };
 
 Textarea.defaultProps = {
@@ -118,7 +122,10 @@ Textarea.defaultProps = {
   isDisabled: false,
   error: false,
   errorMessage: 'Wajib diisi',
-  showCharacterCount: false
+  showCharacterCount: false,
+  onChange: () => {}
 };
 
-export default Textarea;
+export default React.forwardRef((props, ref) => (
+  <Textarea innerRef={ref} {...props} />
+));

@@ -51,6 +51,14 @@ export const Wrapper = styled.div`
       transform: scale(1) rotate(0deg);
     }
   }
+
+  &[data-error] {
+    label {
+      &:before {
+        border-color: ${c.RedPrimary};
+      }
+    }
+  }
 `;
 
 export const Label = styled.label`
@@ -71,13 +79,14 @@ export const Label = styled.label`
     margin-right: 12px;
     transition: all 0.2s ${easing.easeInOutQuad};
     display: inline-block;
+    vertical-align: middle;
   }
 
   &:after {
     content: '';
     position: absolute;
     left: 7px;
-    top: -7px;
+    top: 0;
     width: 10px;
     height: 5px;
     background: none;
@@ -91,6 +100,6 @@ export const Label = styled.label`
 
 export const LabelContent = styled.div`
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: calc(100% - 40px);
 `;

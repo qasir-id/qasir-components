@@ -40,6 +40,7 @@ class InputPassword extends PureComponent {
 
   handlePasswordChange(e) {
     this.setState({ password: e.target.value });
+    this.props.onChange && this.props.onChange(e);
   }
 
   toggleShow() {
@@ -59,6 +60,7 @@ class InputPassword extends PureComponent {
         value={this.state.password}
         onChange={this.handlePasswordChange}
         suffix={suffixContent}
+        ref={this.props.innerRef}
       />
     );
   }
@@ -92,7 +94,8 @@ InputPassword.propTypes = {
   /**
    * Error message text
    */
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 InputPassword.defaultProps = {
@@ -102,7 +105,13 @@ InputPassword.defaultProps = {
   value: '',
   isDisabled: false,
   error: false,
-  errorMessage: 'Wajib diisi'
+  errorMessage: 'Wajib diisi',
+  onChange: () => {}
 };
 
-export default InputPassword;
+export default React.forwardRef((props, ref) => (
+  <InputPassword
+    innerRef={ref}
+    {...props}
+  />
+));

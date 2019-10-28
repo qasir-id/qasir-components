@@ -42,6 +42,7 @@ class Input extends PureComponent {
     this.setState({
       currVal: e.target.value
     });
+    this.props.onChange && this.props.onChange(e);
   };
 
   render() {
@@ -83,6 +84,7 @@ class Input extends PureComponent {
             placeholder={variant === 'normal' ? label : undefined}
             style={addonStyle}
             maxLength={maxLength}
+            ref={this.props.innerRef}
           />
           {suffix && <Suff>{suffix}</Suff>}
           {variant === 'material' && (
@@ -142,7 +144,7 @@ Input.propTypes = {
    */
   isDisabled: PropTypes.bool,
   /**
-   * Set input to disable state
+   * Set input to error
    */
   error: PropTypes.bool,
   /**
@@ -161,7 +163,8 @@ Input.propTypes = {
    * Set maximum character length if any
    */
   maxLength: PropTypes.number,
-  showCharacterCount: PropTypes.bool
+  showCharacterCount: PropTypes.bool,
+  onChange: PropTypes.func
 };
 
 Input.defaultProps = {
@@ -174,7 +177,15 @@ Input.defaultProps = {
   error: false,
   errorMessage: 'Wajib diisi',
   prefix: undefined,
-  suffix: undefined
+  suffix: undefined,
+  onChange: () => {}
 };
 
-export default Input;
+// export default Input;
+
+export default React.forwardRef((props, ref) => (
+<Input
+  innerRef={ref}
+  {...props}
+/>
+));

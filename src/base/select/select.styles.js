@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import * as v from '../../shared/constants/variables';
 import * as ease from '../../shared/constants/easing';
+import * as c from '../../shared/constants/color';
 
 export const Wrapper = styled.div`
   margin: ${v.spacing.ml}px 0;
@@ -15,10 +16,10 @@ export const Container = styled.div`
   position: relative;
 
   &[data-error] {
-    border-color: ${v.stateRedText};
+    border-color: ${c.RedPrimary};
 
     label {
-      color: ${v.stateRedText};
+      color: ${c.RedPrimary};
     }
   }
 
@@ -83,7 +84,7 @@ export const Label = styled.label`
 `;
 
 export const ErrorLabel = styled.span`
-  color: ${v.stateRedText};
+  color: ${c.RedPrimary};
   font-family: ${v.fontFamilyBase};
   display: block;
   font-size: ${v.FontSize.tiny};
