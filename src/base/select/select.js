@@ -37,6 +37,7 @@ class Select extends PureComponent {
             {...props}
             defaultValue={this.state.selectedId}
             onChange={this.dropdownChanged}
+            ref={this.props.innerRef}
           >
             <option disabled selected />
             {options.map((option, index) => (
@@ -50,7 +51,7 @@ class Select extends PureComponent {
         {error && errorMessage !== '' && (
           <Text
             variant="ui-tiny"
-            color="red"
+            color="alert"
             tag="div"
             style={{ paddingLeft: 18, paddingTop: 8 }}
           >
@@ -107,4 +108,6 @@ Select.defaultProps = {
   selectedOptionId: undefined
 };
 
-export default Select;
+export default React.forwardRef((props, ref) => (
+  <Select innerRef={ref} {...props} />
+));

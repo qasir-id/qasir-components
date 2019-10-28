@@ -41,6 +41,14 @@ storiesOf('Form | Input', module)
       <h5>Material</h5>
       <Input label="Your Name" value="This is material variant" />
 
+      <h5>Character Count</h5>
+      <Input
+        label="Your Name"
+        value="This is material variant"
+        maxLength={10}
+        showCharacterCount
+      />
+
       <h5>Normal</h5>
       <Input
         label="Your Name"

@@ -103,11 +103,11 @@ export const cursorDisabled = 'not-allowed';
 // Shadow
 // ------------------------------------------------------------------------------------------
 
-export const elevation1 = '0 1px 5px rgba(27, 27, 27, .1)';
-export const elevation2 = '0 2px 8px rgba(27, 27, 27, .18)';
-export const elevation3 = '0 8px 16px rgba(27, 27, 27, .18), 0 2px 8px rgba(27, 27, 27, .1)';
-export const elevation4 = '0 14px 28px rgba(27, 27, 27, .24), 0 10px 10px rgba(27, 27, 27, .2)';
-export const elevation5 = '0 19px 38px rgba(27, 27, 27, .3), 0 15px 12px rgba(27, 27, 27, .2)';
+export const elevation1 = 'none';
+export const elevation2 = '0 1px 3px rgba(27, 27, 27, .1)';
+export const elevation3 = '0 2px 8px rgba(27, 27, 27, .18)';
+export const elevation4 = '0 8px 16px rgba(27, 27, 27, .10), 0 2px 8px rgba(27, 27, 27, .1)';
+export const elevation5 = '0 8px 16px rgba(27, 27, 27, .15), 0 2px 8px rgba(27, 27, 27, .1)';
 
 // Grid
 // ------------------------------------------------------------------------------------------

@@ -10,16 +10,16 @@ import Button, { BUTTON_VARIANT, BUTTON_SIZE } from './button';
  * - description
  */
 const DESCRIPTION = `
-Text
+Button
 ---
 ~~~js
-import Text from 'qasir/lib/base';
+import Button from 'qasir/lib/base';
 ~~~
 
 or
 
 ~~~js
-import Text from 'qasir/lib/base/button';
+import Button from 'qasir/lib/base/button';
 ~~~
 
 Examples
@@ -38,7 +38,7 @@ storiesOf('base|Button', module)
     <div>
       <h3>Variants</h3>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        {Object.values(BUTTON_VARIANT).map((variant) => (
+        {Object.values(BUTTON_VARIANT).map(variant => (
           <div key={variant} style={{ marginRight: 10 }}>
             <Button variant={variant}>{variant}</Button>
           </div>
@@ -52,7 +52,7 @@ storiesOf('base|Button', module)
           alignItems: 'flex-end'
         }}
       >
-        {Object.values(BUTTON_SIZE).map((size) => (
+        {Object.values(BUTTON_SIZE).map(size => (
           <div key={size} style={{ marginRight: 10 }}>
             <Button size={size}>{size}</Button>
           </div>
@@ -74,7 +74,7 @@ storiesOf('base|Button', module)
           <Button isLoading>Disabled</Button>
         </div>
         <div>
-          <Button isLoading variant="secondary">
+          <Button isLoading variant='secondary'>
             Disabled
           </Button>
         </div>

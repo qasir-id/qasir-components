@@ -12,7 +12,6 @@ export const Container = styled.div`
   border-spacing: 0;
   border-collapse: separate;
   width: 100%;
-  /* overflow: hidden; */
   position: relative;
 
   &[data-error] {
@@ -24,51 +23,24 @@ export const Container = styled.div`
   }
 `;
 
-export const InputTag = styled.input`
+export const Field = styled.textarea`
+  width: 100%;
   font-size: ${v.FontSize.small}px;
   background: ${v.inputBg};
   padding: ${v.inputPaddingY}px ${v.inputPaddingX}px;
-  width: 100%;
   border-radius: ${v.inputBorderRadiusLg}px;
+  width: 100%;
   border: 0;
-  transition: border 0.3s ${ease.easeInQuad};
   font-family: ${v.fontFamilyBase};
   position: relative;
-  color: ${v.color.black};
-  display: table-cell;
+  color: ${c.DarkPrimary};
+  outline: 0;
+  resize: vertical;
 
   &:disabled {
     background: ${c.LightSecondary};
+    opacity: 0.5;
   }
-
-  &[type='password'] {
-    letter-spacing: 5px;
-  }
-
-  &[type='number']::-webkit-inner-spin-button,
-  &[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &:focus,
-  &:active {
-    border-color: ${v.inputBorderColor};
-    outline: 0;
-
-    & ~ label {
-      top: -10px;
-      font-size: 14px;
-      background: white;
-      padding: 0 ${v.spacing.xs}px;
-      left: ${v.spacing.xs}px;
-    }
-  }
-`;
-
-export const Wrapper = styled.div`
-  position: relative;
-  margin: ${v.spacing.ml}px 0;
 `;
 
 export const Label = styled.label`
@@ -97,26 +69,4 @@ export const ErrorLabel = styled.span`
   font-family: ${v.fontFamilyBase};
   display: block;
   font-size: ${v.FontSize.tiny};
-`;
-
-export const Pref = styled.span`
-  display: table-cell;
-  font-size: ${v.FontSize.small}px;
-  font-family: ${v.fontFamilyBase};
-  padding-left: ${v.inputPaddingX}px;
-  padding-right: ${v.spacing.xs}px;
-  color: ${v.color.black};
-  width: 1px;
-  vertical-align: middle;
-`;
-
-export const Suff = styled.span`
-  display: table-cell;
-  font-size: ${v.FontSize.small}px;
-  font-family: ${v.fontFamilyBase};
-  padding-right: ${v.inputPaddingX}px;
-  padding-left: ${v.spacing.xs}px;
-  color: ${v.color.black};
-  width: 1px;
-  vertical-align: middle;
 `;

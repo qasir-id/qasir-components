@@ -42,18 +42,19 @@
   "homepage": "https://github.com/QasirID/qasir-components#readme",
   "dependencies": {
     "antd": "^3.23.6",
-    "carbon-components": "^10.7.0",
-    "carbon-components-react": "^7.7.0",
-    "carbon-icons": "^7.0.7",
     "classnames": "^2.2.6",
     "polished": "^3.4.1",
+    "react-hook-form": "^3.26.2",
+    "react-slick": "^0.25.2",
+    "react-swipeable-views": "^0.13.3",
     "react-transition-group": "4.1.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.3.2"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.10.2",
+    "react-dom": "^16.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
