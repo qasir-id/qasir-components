@@ -30,12 +30,44 @@ export const Fieldset = styled.div`
   margin-bottom: 20px;
 `;
 
+// class Form extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { vals: 'hoi' };
+//   }
+//   handleClear = e => {
+//     console.log(this.state.vals);
+//     this.setState({ vals: '' });
+//   };
+
+//   handleInputChange = e => {
+//     this.setState({
+//       vals: e.target.value
+//     });
+//   };
+//   render() {
+//     return (
+//       <Fieldset>
+//         <Input label="Search" name="search" value={this.state.vals} onChange={this.handleInputChange} />
+//         <input value={this.state.vals} />
+//         <span onClick={this.handleClear}>clear</span>
+//       </Fieldset>
+//     );
+//   }
+// }
+
+// export default Form;
+
 export default function Form() {
   const { register, handleSubmit, watch, errors } = useForm({
-    mode: "onBlur"
+    mode: 'onBlur'
   });
   const onSubmit = data => {
     console.log(data);
+  };
+
+  const handleClear = e => {
+    console.log(e);
   };
 
   return (
@@ -58,6 +90,16 @@ export default function Form() {
                 ref={register({ required: true })}
                 error={errors.nama && true}
                 errorMessage={errors.nama && 'Wajib diisi sob'}
+              />
+            </Fieldset>
+            <Fieldset>
+              <Input
+                label="Search"
+                name="search"
+                type="search"
+                ref={register({ required: true })}
+                error={errors.search && true}
+                errorMessage={errors.search && 'Wajib diisi sob'}
               />
             </Fieldset>
             <Fieldset>

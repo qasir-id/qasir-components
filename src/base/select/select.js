@@ -5,7 +5,7 @@ import Text from '../text';
 
 class Select extends PureComponent {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       selectedId: props.selectedOptionId
     };

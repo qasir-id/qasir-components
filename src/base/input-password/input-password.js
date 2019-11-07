@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -19,28 +19,15 @@ const Icon = styled.div`
   text-align: center;
 `;
 
-class InputPassword extends PureComponent {
+class InputPassword extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       hidden: true,
       password: this.props.value
     };
 
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.value) {
-      this.setState({ password: this.props.value });
-    }
-  }
-
-  handlePasswordChange(e) {
-    this.setState({ password: e.target.value });
-    this.props.onChange && this.props.onChange(e);
   }
 
   toggleShow() {
@@ -57,8 +44,7 @@ class InputPassword extends PureComponent {
       <Input
         {...this.props}
         type={this.state.hidden ? 'password' : 'text'}
-        value={this.state.password}
-        onChange={this.handlePasswordChange}
+        value={this.props.value}
         suffix={suffixContent}
         ref={this.props.innerRef}
       />
@@ -102,16 +88,11 @@ InputPassword.defaultProps = {
   className: undefined,
   variant: 'material',
   label: undefined,
-  value: '',
   isDisabled: false,
   error: false,
-  errorMessage: 'Wajib diisi',
-  onChange: () => {}
+  errorMessage: 'Wajib diisi'
 };
 
 export default React.forwardRef((props, ref) => (
-  <InputPassword
-    innerRef={ref}
-    {...props}
-  />
+  <InputPassword innerRef={ref} {...props} />
 ));

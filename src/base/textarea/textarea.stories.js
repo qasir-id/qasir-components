@@ -33,24 +33,15 @@ storiesOf('form|Textarea', module)
     <div style={{ padding: 40 }}>
       <div style={{ maxWidth: 300 }}>
         <h5>Default</h5>
-        <Textarea label="Message" value="this is message of textarea" />
+        <Textarea label="Message" />
 
         <h5>Character Count</h5>
-        <Textarea
-          label="Message"
-          value="this is message of textarea"
-          maxLength={140}
-          showCharacterCount
-        />
+        <Textarea label="Message" maxLength={140} showCharacterCount />
         <h5>Error</h5>
-        <Textarea label="Message" value="this is message of textarea" error />
+        <Textarea label="Message" error />
 
         <h5>Disabled</h5>
-        <Textarea
-          label="Message"
-          value="this is message of textarea"
-          isDisabled
-        />
+        <Textarea label="Message" isDisabled />
       </div>
     </div>
   ));

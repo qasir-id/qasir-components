@@ -33,5 +33,6 @@ storiesOf('form|Input Password', module)
   .add('example', () => (
     <div style={{ width: 300 }}>
       <InputPassword label="Your Password" value="QaSiRqiUqiU2019!" />
+      <InputPassword label="Your Password" />
     </div>
   ));

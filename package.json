@@ -1,6 +1,6 @@
 {
   "name": "qasir",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "An enterprise-class UI design language and React components",
   "main": "dist",
   "scripts": {

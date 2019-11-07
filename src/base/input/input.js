@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -16,39 +16,24 @@ export const VARIANT = {
   material: 'material'
 };
 
-class Input extends PureComponent {
-  constructor(props) {
-    super();
-    this.state = {
-      currVal: props.value
-    };
-  }
-
-  handleInputChange = e => {
-    this.setState({
-      currVal: e.target.value
-    });
-  };
-
+class Input extends Component {
   render() {
-    const active = this.state.currVal !== '';
-
     const {
       className,
       type,
       label,
       placeholder,
-      value,
       isDisabled,
       error,
       errorMessage,
       variant,
       prefix,
       suffix,
-      maxLength,
-      showCharacterCount,
+      value,
       ...props
     } = this.props;
+
+    // const active = value !== '' || value !== undefined;
 
     const addonStyle = {
       paddingLeft: prefix && variant === 'normal' ? 0 : undefined,
@@ -64,31 +49,16 @@ class Input extends PureComponent {
           {variant === 'normal' && prefix && <Pref>{prefix}</Pref>}
           <InputTag
             {...props}
-            value={this.state.currVal}
+            value={value}
             type={type}
-            onChange={this.handleInputChange}
             disabled={isDisabled}
-            placeholder={variant === 'normal' ? label : undefined}
+            placeholder={variant === 'normal' ? label : ' '}
             style={addonStyle}
-            maxLength={maxLength}
             ref={this.props.innerRef}
           />
           {suffix && <Suff>{suffix}</Suff>}
-          {variant === 'material' && (
-            <Label data-active={active}>{label}</Label>
-          )}
+          {variant === 'material' && <Label className="label">{label}</Label>}
         </Container>
-
-        {showCharacterCount && (
-          <Text
-            tag="div"
-            variant="ui-tiny"
-            color="neutral"
-            style={{ textAlign: 'right', marginTop: 4 }}
-          >
-            {this.state.characterCount} / {maxLength}
-          </Text>
-        )}
 
         {error && errorMessage !== '' && (
           <Text
@@ -146,12 +116,7 @@ Input.propTypes = {
    * Content after input
    */
   suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  /**
-   * Set maximum character length if any
-   */
-  maxLength: PropTypes.number,
-  showCharacterCount: PropTypes.bool
-  // onChange: PropTypes.func
+  onChange: PropTypes.func
 };
 
 Input.defaultProps = {
@@ -159,7 +124,7 @@ Input.defaultProps = {
   variant: 'material',
   type: 'text',
   label: undefined,
-  value: '',
+  value: undefined,
   isDisabled: false,
   error: false,
   errorMessage: 'Wajib diisi',

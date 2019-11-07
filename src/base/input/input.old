@@ -18,7 +18,7 @@ export const VARIANT = {
 
 class Input extends PureComponent {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       currVal: props.value
     };

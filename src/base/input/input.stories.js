@@ -39,20 +39,11 @@ storiesOf('Form | Input', module)
       <h2>All Variants</h2>
 
       <h5>Material</h5>
-      <Input label="Your Name" value="This is material variant" />
-
-      <h5>Character Count</h5>
-      <Input
-        label="Your Name"
-        value="This is material variant"
-        maxLength={10}
-        showCharacterCount
-      />
+      <Input label="Your Name" />
 
       <h5>Normal</h5>
       <Input
         label="Your Name"
-        value="This is normal variant"
         variant="normal"
       />
 
@@ -60,7 +51,7 @@ storiesOf('Form | Input', module)
       <Input label="Input your number" type="number" />
 
       <h2 style={{ marginTop: 60 }}>Error State</h2>
-      <Input label="Error State" value="Error" error />
+      <Input label="Error State" error />
 
       <h2 style={{ marginTop: 60 }}>Input Addon</h2>
       <h5>Prefix</h5>

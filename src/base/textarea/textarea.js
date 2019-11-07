@@ -1,30 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Text from '../text';
 
 import * as Style from './textarea.styles';
 
-class Textarea extends PureComponent {
-  constructor(props) {
-    super();
-    this.state = {
-      characterCount: (props.value && props.value.length) || 0,
-      currVal: props.value
-    };
-  }
-
-  handleInputChange = e => {
-    this.setState({
-      currVal: e.target.value,
-      characterCount: e.target.value.length
-    });
-    // this.props.onChange && this.props.onChange(e);
-  };
-
+class Textarea extends Component {
   render() {
-    const active = this.state.currVal !== '';
-
     const {
       className,
       rows,
@@ -42,26 +24,17 @@ class Textarea extends PureComponent {
         <Style.Container data-error={error ? 'true' : undefined}>
           <Style.Field
             {...props}
+            value={value}
             className={className}
             disabled={isDisabled}
-            onChange={this.handleInputChange}
-            value={this.state.currVal}
+            placeholder=" "
             rows={rows}
             maxLength={maxLength}
             ref={this.props.innerRef}
           />
-          <Style.Label data-active={active}>{label}</Style.Label>
+          <Style.Label className="label">{label}</Style.Label>
         </Style.Container>
-        {showCharacterCount && (
-          <Text
-            tag="div"
-            variant="ui-tiny"
-            color="neutral"
-            style={{ textAlign: 'right', marginTop: 4 }}
-          >
-            {this.state.characterCount} / {maxLength}
-          </Text>
-        )}
+
         {error && errorMessage !== '' && (
           <Text
             variant="ui-tiny"
@@ -106,23 +79,16 @@ Textarea.propTypes = {
    * Error message text
    */
   errorMessage: PropTypes.string,
-  /**
-   * Set maximum character length if any
-   */
-  maxLength: PropTypes.number,
-  showCharacterCount: PropTypes.bool
-  // onChange: PropTypes.func
+  onChange: PropTypes.func
 };
 
 Textarea.defaultProps = {
   className: undefined,
   rows: 2,
   label: undefined,
-  value: '',
   isDisabled: false,
   error: false,
-  errorMessage: 'Wajib diisi',
-  showCharacterCount: false
+  errorMessage: 'Wajib diisi'
   // onChange: () => {}
 };
 

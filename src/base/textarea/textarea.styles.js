@@ -17,7 +17,8 @@ export const Container = styled.div`
   &[data-error] {
     border-color: ${v.stateRedText};
 
-    label {
+    label,
+    .label {
       color: ${v.stateRedText};
     }
   }
@@ -40,6 +41,16 @@ export const Field = styled.textarea`
   &:disabled {
     background: ${c.LightSecondary};
     opacity: 0.5;
+  }
+
+  &:focus ~ label,
+  :not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 14px;
+    color: #b0b2bb;
+    background: white;
+    padding: 0 ${v.spacing.xs}px;
+    left: ${v.spacing.xs}px;
   }
 `;
 

@@ -7,7 +7,7 @@ import * as Style from './combobox.styles';
 
 class Combobox extends PureComponent {
   constructor() {
-    super();
+    super(props);
     this.myRef = React.createRef();
     this.state = {
       active: false
