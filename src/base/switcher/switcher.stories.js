@@ -13,7 +13,7 @@ const DESCRIPTION = `
 Switcher
 ---
 ~~~js
-import Switcher from 'qasir/lib/base;
+import Switcher from 'qasir/lib/base';
 ~~~
 or
 ~~~js

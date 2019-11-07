@@ -41,6 +41,7 @@ const Checkbox = React.forwardRef(
         }}
       />
       <Style.Label className="label" htmlFor={id} title={title || null}>
+        <Style.Box className="box" />
         {!hideLabel && <Style.LabelContent>{labelText}</Style.LabelContent>}
       </Style.Label>
       {error && errorMessage !== '' && (

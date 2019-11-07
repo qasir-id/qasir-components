@@ -22,11 +22,11 @@ const DESCRIPTION = `
 Radio Button
 ---
 ~~~js
-import RadioButton from 'qasir/lib/base;
+import RadioButton from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import RadioButton from 'qasir/lib/base/radio-button;
+import RadioButton from 'qasir/lib/base/radio-button';
 ~~~
 
 Usage

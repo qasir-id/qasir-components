@@ -19,7 +19,7 @@ class Textarea extends PureComponent {
       currVal: e.target.value,
       characterCount: e.target.value.length
     });
-    this.props.onChange && this.props.onChange(e);
+    // this.props.onChange && this.props.onChange(e);
   };
 
   render() {
@@ -110,8 +110,8 @@ Textarea.propTypes = {
    * Set maximum character length if any
    */
   maxLength: PropTypes.number,
-  showCharacterCount: PropTypes.bool,
-  onChange: PropTypes.func
+  showCharacterCount: PropTypes.bool
+  // onChange: PropTypes.func
 };
 
 Textarea.defaultProps = {
@@ -122,8 +122,8 @@ Textarea.defaultProps = {
   isDisabled: false,
   error: false,
   errorMessage: 'Wajib diisi',
-  showCharacterCount: false,
-  onChange: () => {}
+  showCharacterCount: false
+  // onChange: () => {}
 };
 
 export default React.forwardRef((props, ref) => (

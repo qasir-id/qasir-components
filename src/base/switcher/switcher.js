@@ -64,7 +64,7 @@ class Switcher extends React.Component {
       toggled,
       onChange,
       onToggle,
-      id = (this.inputId = this.inputId || `__carbon-toggle_${getInstanceId()}`),
+      id = (this.inputId = this.inputId || `__qsr-toggle_${getInstanceId()}`),
       labelText,
       labelA,
       labelB,

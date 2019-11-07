@@ -11,11 +11,11 @@ const DESCRIPTION = `
 Input Password
 ---
 ~~~js
-import InputPassword from 'qasir/lib/base;
+import InputPassword from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import InputPassword from 'qasir/lib/base/input-password;
+import InputPassword from 'qasir/lib/base/input-password';
 ~~~
 
 Usage
@@ -32,6 +32,6 @@ storiesOf('form|Input Password', module)
   })
   .add('example', () => (
     <div style={{ width: 300 }}>
-      <InputPassword label="Your Password" value="QaSiRqiUqiU2019!"/>
+      <InputPassword label="Your Password" value="QaSiRqiUqiU2019!" />
     </div>
   ));

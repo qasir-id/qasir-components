@@ -15,11 +15,11 @@ const DESCRIPTION = `
 Input
 ---
 ~~~js
-import Input from 'qasir/lib/base;
+import Input from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import Input from 'qasir/lib/base/input;
+import Input from 'qasir/lib/base/input';
 ~~~
 
 Usage

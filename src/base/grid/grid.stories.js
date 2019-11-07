@@ -38,13 +38,13 @@ Grid
 This component temporary extend from antd grid
 
 ~~~js
-import Row from 'qasir/lib/base;
-import Col from 'qasir/lib/base;
+import Row from 'qasir/lib/base';
+import Col from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import Row from 'qasir/lib/base/grid;
-import Col from 'qasir/lib/base/grid;
+import Row from 'qasir/lib/base/grid';
+import Col from 'qasir/lib/base/grid';
 ~~~
 
 Usage

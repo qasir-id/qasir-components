@@ -23,11 +23,11 @@ export const Black30 = '#818491';
 export const Black20 = '#B0B2BB';
 export const Black05 = '#E3E5ED';
 
-//Green
+// Green
 export const Green50 = '#00875a';
 export const Green05 = '#e8fef5';
 
-//Blue
+// Blue
 export const Blue50 = '#0264c8';
 export const Blue05 = '#ecf8ff';
 

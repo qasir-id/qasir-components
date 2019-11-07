@@ -11,11 +11,11 @@ const DESCRIPTION = `
 Textarea
 ---
 ~~~js
-import Textarea from 'qasir/lib/base;
+import Textarea from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import Textarea from 'qasir/lib/base/textarea;
+import Textarea from 'qasir/lib/base/textarea';
 ~~~
 
 Usage

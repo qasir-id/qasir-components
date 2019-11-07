@@ -15,7 +15,7 @@ export const Container = styled.div`
   /* overflow: hidden; */
   position: relative;
 
-  &[data-error] {
+  &[data-error="true"] {
     border-color: ${v.stateRedText};
 
     label {
@@ -43,6 +43,10 @@ export const InputTag = styled.input`
 
   &[type='password'] {
     letter-spacing: 5px;
+  }
+
+  &[type='search'] {
+    -webkit-appearance: textfield;
   }
 
   &[type='number']::-webkit-inner-spin-button,

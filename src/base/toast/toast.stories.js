@@ -12,12 +12,12 @@ const DESCRIPTION = `
 Toast
 ---
 ~~~js
-import Toast from 'qasir/lib/base;
+import Toast from 'qasir/lib/base';
 ~~~
 
 or
 ~~~js
-import Toast from 'qasir/lib/base/toast;
+import Toast from 'qasir/lib/base/toast';
 ~~~
 
 Usage

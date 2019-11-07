@@ -29,7 +29,7 @@ class EmptyState extends PureComponent {
     } = this.props;
     return (
       <Wrapper {...props} className={className}>
-        <img src={img} srcSet={img2x ? img2x : undefined} width={imgWidth} />
+        <img src={img} width={imgWidth} srcSet={ img2x ? `${img2x} 2x` : undefined} />
         <Text
           variant="ui-small"
           weight="bold"

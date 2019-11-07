@@ -12,13 +12,13 @@ const DESCRIPTION = `
 Skeleton
 ---
 ~~~js
-import Skeleton from 'qasir/lib/base;
+import Skeleton from 'qasir/lib/base';
 ~~~
 
 or
 
 ~~~js
-import Skeleton from 'qasir/lib/base/skeleton;
+import Skeleton from 'qasir/lib/base/skeleton';
 ~~~
 
 Usage:

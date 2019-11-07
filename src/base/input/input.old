@@ -28,6 +28,8 @@ class Input extends PureComponent {
     this.setState({
       currVal: e.target.value
     });
+    console.log(e);
+    // this.props.onChange && this.props.onChange(e);
   };
 
   render() {

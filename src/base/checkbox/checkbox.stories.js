@@ -20,6 +20,20 @@ const LabelContent = (
 const DESCRIPTION = `
 Checkbox
 ---
+~~~js
+import Checkbox from 'qasir/lib/base';
+~~~
+
+or
+
+~~~js
+import Checkbox from 'qasir/lib/base/checkbox';
+~~~
+
+Examples
+~~~js
+<Checkbox {...props} />
+~~~
 `;
 
 storiesOf('form|Checkbox', module)

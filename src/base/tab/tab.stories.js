@@ -13,12 +13,12 @@ const DESCRIPTION = `
 Tabs
 ---
 ~~~js
-import { Tab, TabItem } from 'qasir/lib/base;
+import { Tab, TabItem } from 'qasir/lib/base';
 ~~~
 
 or
 ~~~js
-import { Tab, TabItem } from 'qasir/lib/base/tab;
+import { Tab, TabItem } from 'qasir/lib/base/tab';
 ~~~
 
 Usage

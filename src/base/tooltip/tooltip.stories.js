@@ -12,7 +12,7 @@ const DESCRIPTION = `
 Label
 ---
 ~~~js
-import Tooltip from 'qasir/lib/base;
+import Tooltip from 'qasir/lib/base';
 ~~~
 
 or

@@ -12,12 +12,12 @@ const DESCRIPTION = `
 Badge
 ---
 ~~~js
-import Badge from 'qasir/lib/base;
+import Badge from 'qasir/lib/base';
 ~~~
 
 or
 ~~~js
-import Badge from 'qasir/lib/base/badge;
+import Badge from 'qasir/lib/base/badge';
 ~~~
 
 Usage

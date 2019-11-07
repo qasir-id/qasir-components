@@ -23,27 +23,28 @@ export const Wrapper = styled.div`
     }
 
     &:checked + .label {
-      &:before {
+      .box {
         background-color: ${c.color.RedPrimary};
         border-color: ${c.color.RedPrimary};
         border-width: 1px;
       }
 
-      &:after {
-        transform: scale(1) rotate(-45deg);
+      .box:after {
+        transform: rotate(-45deg);
+        opacity: 1;
       }
     }
-    &:indeterminate + .label:before,
-    label[data-contained-checkbox-state='true']:before,
-    label[data-contained-checkbox-state='mixed']:before {
+    &:indeterminate + .label .box,
+    label[data-contained-checkbox-state='true'] .box,
+    label[data-contained-checkbox-state='mixed'] .box {
       background-color: ${c.color.RedPrimary};
       border-color: ${c.color.RedPrimary};
       border-width: 1px;
     }
 
-    &:indeterminate + .label:after,
-    label[data-contained-checkbox-state='true']:after,
-    label[data-contained-checkbox-state='mixed']:after {
+    &:indeterminate + .label .box:after,
+    label[data-contained-checkbox-state='true'] .box:after,
+    label[data-contained-checkbox-state='mixed'] .box:after {
       width: 0.5rem;
       height: 0;
       top: 2px;
@@ -67,39 +68,40 @@ export const Label = styled.label`
   cursor: pointer;
   min-height: 1.5rem;
   user-select: none;
-
-  &:before {
-    box-sizing: border-box;
-    content: '';
-    background-color: transparent;
-    border-radius: ${v.borderRadiusLg}px;
-    border: 2px solid ${c.color.DarkSecondary};
-    height: 24px;
-    width: 24px;
-    margin-right: 12px;
-    transition: all 0.2s ${easing.easeInOutQuad};
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 0;
-    width: 10px;
-    height: 5px;
-    background: none;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transform: scale(0) rotate(-45deg);
-    transform-origin: bottom right;
-    display: inline-block;
-  }
 `;
 
 export const LabelContent = styled.div`
   display: inline-block;
   vertical-align: top;
   width: calc(100% - 40px);
+`;
+
+export const Box = styled.div`
+  background-color: transparent;
+  border-radius: ${v.borderRadiusLg}px;
+  border: 2px solid ${c.color.DarkSecondary};
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+  transition: all 0.2s ${easing.easeInOutQuad};
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    width: 10px;
+    height: 5px;
+    background: none;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+    display: inline-block;
+    opacity: 0;
+    transition: all 0.2s ${easing.easeInOutQuad};
+  }
 `;

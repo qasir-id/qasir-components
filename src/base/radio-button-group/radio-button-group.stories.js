@@ -55,11 +55,11 @@ Use defaultSelected when you want a radio button to be selected initially, but d
 at a later time. If you do need to set it dynamically at a later time, then use the valueSelected property instead.
 
 ~~~js
-import RadioButtonGroup from 'qasir/lib/base;
+import RadioButtonGroup from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import RadioButtonGroup from 'qasir/lib/base/radio-button-group;
+import RadioButtonGroup from 'qasir/lib/base/radio-button-group';
 ~~~
 
 Usage

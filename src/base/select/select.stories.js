@@ -18,11 +18,11 @@ const DESCRIPTION = `
 Selectbox
 ---
 ~~~js
-import Select from 'qasir/lib/base;
+import Select from 'qasir/lib/base';
 ~~~
 or
 ~~~js
-import Select from 'qasir/lib/base/select;
+import Select from 'qasir/lib/base/select';
 ~~~
 
 Usage

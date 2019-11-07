@@ -15,12 +15,12 @@ const DESCRIPTION = `
 Modal
 ---
 ~~~js
-import { Modal, ModalBody, ModalHeader, ModalFooter } from 'qasir/lib/base;
+import { Modal, ModalBody, ModalHeader, ModalFooter } from 'qasir/lib/base';
 ~~~
 
 or
 ~~~js
-import { Modal, ModalBody, ModalHeader, ModalFooter } from 'qasir/lib/base/modal;
+import { Modal, ModalBody, ModalHeader, ModalFooter } from 'qasir/lib/base/modal';
 ~~~
 
 Usage 

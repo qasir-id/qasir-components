@@ -3,13 +3,23 @@ import styled from 'styled-components';
 
 import useForm from 'react-hook-form';
 
-import Input from '../input';
-import InputPassword from '../input-password';
-import Textarea from '../textarea';
-import Button from '../button';
-import Text from '../text';
-import Select from '../select';
-import Checkbox from '../checkbox';
+import {
+  Input,
+  InputPassword,
+  Textarea,
+  Button,
+  Text,
+  Select,
+  Checkbox
+  // eslint-disable-next-line import/no-useless-path-segments
+} from '../../base';
+
+const options = [
+  { name: 'Pelajar', value: '01' },
+  { name: 'Mahasiswa', value: '02' },
+  { name: 'Wiraswasta', value: '03' },
+  { name: 'Konglongmerat', value: '04' }
+];
 
 export const CardBox = styled.div`
   padding: 12px;
@@ -21,7 +31,9 @@ export const Fieldset = styled.div`
 `;
 
 export default function Form() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch, errors } = useForm({
+    mode: "onBlur"
+  });
   const onSubmit = data => {
     console.log(data);
   };
@@ -91,6 +103,18 @@ export default function Form() {
                 ref={register({ required: true })}
                 errorMessage={errors.kota && 'masukin kotanya dulu bosque'}
               />
+            </Fieldset>
+
+            <Fieldset>
+              {/* <Combobox
+                options={options}
+                placeholder="Cari"
+                name="pekerjaan"
+                label="Pekerjaan"
+                search={false}
+                ref={register({ required: true })}
+              /> */}
+              {/* {errors.pekerjaan && 'masukin kotanya dulu bosque'} */}
             </Fieldset>
 
             <Fieldset>
