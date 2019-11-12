@@ -1,6 +1,6 @@
 {
   "name": "qasir",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "description": "An enterprise-class UI design language and React components",
   "main": "dist",
   "scripts": {
@@ -46,6 +46,7 @@
     "classnames": "^2.2.6",
     "downshift": "^3.4.1",
     "faker": "^4.1.0",
+    "multiselect-react-dropdown": "^1.2.4",
     "polished": "^3.4.1",
     "react-hook-form": "^3.26.2",
     "react-select-search": "^0.10.1",

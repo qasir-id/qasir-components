@@ -6,6 +6,30 @@ import Text from '../text';
 import * as Style from './textarea.styles';
 
 class Textarea extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      characterCount: (props.value && props.value.length) || 0
+    };
+  }
+
+  // static getDerivedStateFromProps(nextProps, props) {
+  //   if (props.value !== nextProps.value) {
+  //     // Update character count if props value change
+  //     if (props.showCharacterCount) {
+  //       state.characterCount = nextProps.value.length;
+  //     }
+  //     // setState(state);
+  //   }
+  // }
+
+  handleInputChange = e => {
+    this.setState({
+      characterCount: e.target.value.length
+    });
+    this.props.onChange && this.props.onChange(e);
+  };
+
   render() {
     const {
       className,
@@ -31,9 +55,21 @@ class Textarea extends Component {
             rows={rows}
             maxLength={maxLength}
             ref={this.props.innerRef}
+            onChange={this.handleInputChange}
           />
           <Style.Label className="label">{label}</Style.Label>
         </Style.Container>
+
+        {showCharacterCount && (
+          <Text
+            tag="div"
+            variant="ui-tiny"
+            color="neutral"
+            style={{ textAlign: 'right', marginTop: 4 }}
+          >
+            {this.state.characterCount} / {maxLength}
+          </Text>
+        )}
 
         {error && errorMessage !== '' && (
           <Text
@@ -79,7 +115,12 @@ Textarea.propTypes = {
    * Error message text
    */
   errorMessage: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  /**
+   * Set maximum character length if any
+   */
+  maxLength: PropTypes.number,
+  showCharacterCount: PropTypes.bool
 };
 
 Textarea.defaultProps = {
@@ -88,7 +129,8 @@ Textarea.defaultProps = {
   label: undefined,
   isDisabled: false,
   error: false,
-  errorMessage: 'Wajib diisi'
+  errorMessage: 'Wajib diisi',
+  showCharacterCount: false
   // onChange: () => {}
 };
 

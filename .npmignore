@@ -10,3 +10,6 @@ storybook-static/
 src/
 reports/
 jest.config.js
+.stories.js
+.old
+.bak

@@ -9,17 +9,20 @@ import {
   Textarea,
   Button,
   Text,
-  Select,
   Checkbox
   // eslint-disable-next-line import/no-useless-path-segments
 } from '../../base';
 
-const options = [
-  { name: 'Pelajar', value: '01' },
-  { name: 'Mahasiswa', value: '02' },
-  { name: 'Wiraswasta', value: '03' },
-  { name: 'Konglongmerat', value: '04' }
-];
+import Select from '../select';
+
+const Option = Select;
+
+// const options = [
+//   { name: 'Pelajar', value: '01' },
+//   { name: 'Mahasiswa', value: '02' },
+//   { name: 'Wiraswasta', value: '03' },
+//   { name: 'Konglongmerat', value: '04' }
+// ];
 
 export const CardBox = styled.div`
   padding: 12px;
@@ -59,16 +62,25 @@ export const Fieldset = styled.div`
 // export default Form;
 
 export default function Form() {
-  const { register, handleSubmit, watch, errors } = useForm({
+  const { register, handleSubmit, errors, setValue } = useForm({
     mode: 'onBlur'
   });
   const onSubmit = data => {
     console.log(data);
   };
 
-  const handleClear = e => {
+  const handleOnchage = () => {
+    console.log('asd');
+  };
+
+  const handleSelect = e => {
+    setValue('AntdSelect', e);
     console.log(e);
   };
+
+  React.useEffect(() => {
+    register({ name: 'AntdSelect' }); // custom register antd input
+  }, [register]);
 
   return (
     <>
@@ -126,6 +138,7 @@ export default function Form() {
               <Textarea
                 label="Address"
                 name="address"
+                onChange={handleOnchage}
                 ref={register({ required: true })}
                 error={errors.address && true}
                 errorMessage={errors.address && 'alamatnya diisi dong pak'}
@@ -133,30 +146,11 @@ export default function Form() {
             </Fieldset>
 
             <Fieldset>
-              <Select
-                options={[
-                  { label: 'One', value: 'one' },
-                  { label: 'Two', value: 'two' },
-                  { label: 'Three', value: 'three' }
-                ]}
-                label="Kota"
-                name="kota"
-                error={errors.kota && true}
-                ref={register({ required: true })}
-                errorMessage={errors.kota && 'masukin kotanya dulu bosque'}
-              />
-            </Fieldset>
-
-            <Fieldset>
-              {/* <Combobox
-                options={options}
-                placeholder="Cari"
-                name="pekerjaan"
-                label="Pekerjaan"
-                search={false}
-                ref={register({ required: true })}
-              /> */}
-              {/* {errors.pekerjaan && 'masukin kotanya dulu bosque'} */}
+              <Select placeholder="Select a person" onChange={handleSelect}>
+                <Option value="jack">Jack</Option>
+                <Option value="lucy">Lucy</Option>
+              </Select>
+              {errors.AntdSelect && 'masukin kotanya dulu bosque'}
             </Fieldset>
 
             <Fieldset>

@@ -1,113 +1,136 @@
-import styled from 'styled-components';
-
+import { createGlobalStyle } from 'styled-components';
+import 'antd/es/select/style/index.css';
 import * as v from '../../shared/constants/variables';
-import * as ease from '../../shared/constants/easing';
+// import * as ease from '../../shared/constants/easing';
 import * as c from '../../shared/constants/color';
 
-export const Wrapper = styled.div`
-  margin: ${v.spacing.ml}px 0;
-`;
-
-export const Container = styled.div`
-  border-radius: ${v.inputBorderRadiusLg}px;
-  border: 1px solid ${v.inputBorderColor};
-  transition: border 0.3s ${ease.easeInQuad};
-  width: 100%;
-  position: relative;
-
-  &[data-error] {
-    border-color: ${c.RedPrimary};
-
-    label {
-      color: ${c.RedPrimary};
-    }
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-width: 7px;
-    border-style: solid;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    border-color: ${v.color.black} transparent transparent;
-    width: 0;
-    height: 0;
-    top: 5px;
-    bottom: 0;
-    margin: auto;
-    right: 10px;
-  }
-
-  select {
-    font-size: ${v.FontSize.small}px;
-    background: ${v.inputBg};
-    height: 44px;
-    width: 100%;
-    border: 0;
-    font-family: ${v.fontFamilyBase};
+export const SelectStyles = createGlobalStyle`
+  /* Input select Styles */
+  .qselect {
     position: relative;
-    color: ${v.color.black};
-    padding: ${v.inputPaddingY}px ${v.inputPaddingX}px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    .label {
+      color: #b0b2bb;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 10px;
+      top: -10px;
+      transition: 300ms ease all;
+      font-size: ${v.FontSize.small}px;
+      z-index: 10;
+      padding: 0 5px;
+      background: white;
+    }
 
-    &:focus,
-    &:active {
-      outline: 0;
+    .ant-select {
+      display: block;
+
+      &-selection {
+        border-radius: ${v.inputBorderRadiusLg}px;
+        border: 1px solid ${v.inputBorderColor};
+
+        &:hover {
+          border-color: ${v.inputBorderColor};
+        }
+
+        &--single {
+          height: 48px;
+        }
+
+        &__rendered {
+          line-height: 48px;
+          margin-left: 15px;
+        }
+      }
+
+      &-dropdown {
+        box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1),
+          0px 4px 6px rgba(0, 0, 0, 0.06);
+        border-radius: 4px;
+      }
+    }
+
+    .ant-select-focused .ant-select-selection,
+    .ant-select-selection:focus,
+    .ant-select-selection:active {
+      border-color: ${v.inputBorderColor};
+      box-shadow: none;
+    }
+
+    .ant-select-selection__placeholder,
+    .ant-select-search__field__placeholder {
+      color: ${c.DarkPrimary};
+      opacity: 0.8;
+    }
+
+    .ant-select-arrow .ant-select-arrow-icon {
+      svg {
+        display: none;
+      }
+
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid ${c.DarkPrimary};
+        position: absolute;
+        right: 0;
+        margin-top: 5px;
+      }
+    }
+
+    .ant-select-search--inline .ant-select-search__field {
+      /* margin-top: 4px; */
+    }
+
+    .ant-select-selection--multiple > ul > li, .ant-select-selection--multiple .ant-select-selection__rendered > ul > li {
+      margin-top: ${v.spacing.xs}px;
+      height: 32px;
+      line-height: 30px;
+    }
+
+    .ant-select-selection--multiple .ant-select-selection__rendered {
+      margin-left: 15px;
+    }
+
+    .ant-select-selection--multiple .ant-select-selection__choice {
+      background: ${c.LightSecondary};
+      border-color: ${c.LightSecondary};
+      margin-top: ${v.spacing.xs}px;
     }
   }
-`;
 
-export const Label = styled.label`
-  color: #757575;
-  font-size: 16px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: ${v.spacing.m}px;
-  top: ${v.spacing.s + 2}px;
-  transition: 300ms ease all;
-  font-size: ${v.FontSize.small}px;
-  z-index: 5;
 
-  &[data-active='true'] {
-    top: -10px;
-    font-size: 14px;
-    color: #b0b2bb;
-    background: white;
-    padding: 0 ${v.spacing.xs}px;
-    left: ${v.spacing.xs}px;
+   /* Dropdown Styles */
+  .qselectdropdown.ant-select-dropdown {
+    .ant-select-dropdown-menu{
+      margin-top: 0;
+    }
+
+    .ant-select-dropdown-menu-item {
+      padding: 10px 15px;
+    }
+
+    .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+      background-color: #f1f1f1;
+    }
+
+    &.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item .ant-select-selected-icon {
+      background: ${c.LightPrimary};
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      text-align: center;
+      line-height: 29px;
+      opacity: 0;
+    }
+
+    &.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected .ant-select-selected-icon, .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover .ant-select-selected-icon {
+      background: ${c.GreenPrimary1};
+      color: ${c.LightPrimary};
+      opacity: 1;
+    }
   }
-`;
-
-export const ErrorLabel = styled.span`
-  color: ${c.RedPrimary};
-  font-family: ${v.fontFamilyBase};
-  display: block;
-  font-size: ${v.FontSize.tiny};
-`;
-
-export const Pref = styled.span`
-  display: table-cell;
-  font-size: ${v.FontSize.small}px;
-  font-family: ${v.fontFamilyBase};
-  padding-left: ${v.inputPaddingX}px;
-  padding-right: ${v.spacing.xs}px;
-  color: ${v.color.black};
-  width: 1px;
-  vertical-align: middle;
-`;
-
-export const Suff = styled.span`
-  display: table-cell;
-  font-size: ${v.FontSize.small}px;
-  font-family: ${v.fontFamilyBase};
-  padding-right: ${v.inputPaddingX}px;
-  padding-left: ${v.spacing.xs}px;
-  color: ${v.color.black};
-  width: 1px;
-  vertical-align: middle;
 `;

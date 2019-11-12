@@ -1,8 +1,3 @@
-// Styles
-import * as variables from '../shared/constants/variables';
-import * as color from '../shared/constants/color';
-import * as easing from '../shared/constants/easing';
-
 // Components
 import Button from './button';
 import Text from './text';
@@ -56,9 +51,5 @@ export {
   Tab,
   TabItem,
   Textarea,
-  Tooltip,
-  // styles
-  variables,
-  color,
-  easing
+  Tooltip
 };

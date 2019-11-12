@@ -1,113 +1,60 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper, Container, Label } from './select.styles';
-import Text from '../text';
+import { Select as AntdSelect } from 'antd';
+import { SelectStyles } from './select.styles';
 
-class Select extends PureComponent {
+// export const { Option } = AntdSelect;
+
+class Select extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedId: props.selectedOptionId
+      value: props.value
     };
   }
 
-  dropdownChanged = e => {
-    this.setState({ selectedId: e.target.value });
+  handleChange = e => {
+    this.setState({
+      value: e
+    });
+    this.props.onChange && this.props.onChange(e);
   };
 
   render() {
-    const active = this.state.selectedId !== undefined;
-    const {
-      label,
-      className,
-      options,
-      isDisabled,
-      error,
-      errorMessage,
-      selectedOptionId,
-      ...props
-    } = this.props;
     return (
-      <Wrapper>
-        <Container
-          className={className}
-          data-error={error ? 'true' : undefined}
-        >
-          <select
-            {...props}
-            defaultValue={this.state.selectedId}
-            onChange={this.dropdownChanged}
-            ref={this.props.innerRef}
+      <>
+        <SelectStyles />
+        <div className="qselect">
+          <label
+            className="label"
+            style={{
+              display: this.state.value !== undefined ? undefined : 'none'
+            }}
           >
-            <option disabled selected />
-            {options.map((option, index) => (
-              <option key={index} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <Label data-active={active}>{label}</Label>
-        </Container>
-        {error && errorMessage !== '' && (
-          <Text
-            variant="ui-tiny"
-            color="alert"
-            tag="div"
-            style={{ paddingLeft: 18, paddingTop: 8 }}
-          >
-            {errorMessage}
-          </Text>
-        )}
-      </Wrapper>
+            {this.props.placeholder}
+          </label>
+          <AntdSelect
+            {...this.props}
+            dropdownClassName="qselectdropdown"
+            onChange={this.handleChange}
+          />
+        </div>
+      </>
     );
   }
 }
 
 Select.propTypes = {
-  /**
-   * Input label, if not empty this props will change default placeholder
-   */
-  label: PropTypes.string,
-  /**
-   * Class name of the outer wrapper.
-   */
+  prefixCls: PropTypes.string,
   className: PropTypes.string,
-  /**
-   * Options of select
-   */
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
-    })
-  ),
-
-  selectedOptionId: PropTypes.string,
-
-  /**
-   * Set input to disable state
-   */
-  isDisabled: PropTypes.bool,
-  /**
-   * Set input to disable state
-   */
-  error: PropTypes.bool,
-  /**
-   * Error message text
-   */
-  errorMessage: PropTypes.string
+  notFoundContent: PropTypes.node,
+  showSearch: PropTypes.bool,
+  optionLabelProp: PropTypes.string,
+  transitionName: PropTypes.string,
+  choiceTransitionName: PropTypes.string,
+  id: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func
 };
 
-Select.defaultProps = {
-  className: undefined,
-  label: undefined,
-  options: [],
-  isDisabled: false,
-  error: false,
-  errorMessage: 'Wajib diisi',
-  selectedOptionId: undefined
-};
-
-export default React.forwardRef((props, ref) => (
-  <Select innerRef={ref} {...props} />
-));
+export default Select;
