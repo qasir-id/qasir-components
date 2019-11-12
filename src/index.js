@@ -10,7 +10,7 @@ import Loader from './base/loader';
 import Skeleton from './base/skeleton';
 import SvgIcon from './base/svg-icon';
 import Input from './base/input';
-import Select, { Option } from './base/select/select';
+import Select from './base/select';
 import Checkbox from './base/checkbox';
 import { Row, Col } from './base/grid';
 import Toast from './base/toast';
@@ -60,7 +60,5 @@ export {
   // styles
   variables,
   color,
-  easing,
-  // Constant
-  Option
+  easing
 };

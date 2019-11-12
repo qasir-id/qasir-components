@@ -55,6 +55,10 @@ exports.default = {
             '@babel/preset-react'
           ]
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
