@@ -20,3 +20,4 @@ export { default as EmptyState } from './empty-state';
 export { Tab, TabItem } from './tab';
 export { default as Textarea } from './textarea';
 export { default as Tooltop } from './tooltip';
+export { default as Image } from './image';
