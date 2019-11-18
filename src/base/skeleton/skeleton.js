@@ -6,20 +6,21 @@ import * as v from '../../shared/constants/variables';
 
 class Skeleton extends PureComponent {
   render() {
-    const { width, height, radius, ...others } = this.props;
-    return (
-      <SkeletonContainer
-        {...others}
-        style={{ width, height, borderRadius: radius }}
-      />
-    );
+    const { width, height, radius, style, ...others } = this.props;
+    const SkeletonStyles = {
+      width,
+      height,
+      borderRadius: 'radius'
+    };
+    return <SkeletonContainer style={{ ...SkeletonStyles, ...style }} />;
   }
 }
 
 Skeleton.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
-  radius: PropTypes.number
+  radius: PropTypes.number,
+  style: PropTypes.node
 };
 
 Skeleton.defaultProps = {
@@ -48,7 +49,7 @@ const SkeletonContainer = styled.div`
     #f6f7f8 100%
   );
   background-repeat: no-repeat;
-  background-size: 800px 104px;
+  background-size: 800px 300px;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;

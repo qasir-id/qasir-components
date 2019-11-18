@@ -8,7 +8,8 @@ import * as v from '../../shared/constants/variables';
 export const BADGE_VARIANT = {
   alert: 'alert',
   positive: 'positive',
-  warning: 'warning'
+  warning: 'warning',
+  discount: 'discount'
 };
 
 class Badge extends PureComponent {
@@ -16,17 +17,22 @@ class Badge extends PureComponent {
     switch (status) {
       case BADGE_VARIANT.alert:
         return css`
-          background: ${c.color.RedPrimary};
-          color: ${c.color.LightPrimary};
+          background: ${c.RedPrimary};
+          color: ${c.LightPrimary};
         `;
       case BADGE_VARIANT.positive:
         return css`
-          background: ${c.color.GreenPrimary};
-          color: ${c.color.LightPrimary};
+          background: ${c.GreenPrimary1};
+          color: ${c.LightPrimary};
         `;
       case BADGE_VARIANT.warning:
         return css`
-          background: ${c.color.YellowPrimary};
+          background: ${c.YellowPrimary};
+        `;
+      case BADGE_VARIANT.discount:
+        return css`
+          color: ${c.LightPrimary};
+          background: ${c.OrangePrimary};
         `;
       default:
         return false;
@@ -47,7 +53,7 @@ class Badge extends PureComponent {
       white-space: nowrap;
       padding: 0 6px;
       border-radius: 10px;
-      box-shadow: 0 0 0 2px ${c.color.LightPrimary};
+      box-shadow: 0 0 0 2px ${c.LightPrimary};
       ${this.getStatus(status)}
 
       &.multiple-word {
