@@ -51,11 +51,14 @@ class Modal extends PureComponent {
     `;
 
     return (
-      <Style.Container className={className} {...props}>
+      <Style.Container
+        className={className}
+        {...props}
+      >
         <TransitionGroup>
           {isOpen && (
             <CSSTransition timeout={300} classNames="anim">
-              <Style.Wrapper>
+              <Style.Wrapper data-centered={centered}>
                 <Style.Dialog className="main" css={modalSize}>
                   {children}
                 </Style.Dialog>
@@ -91,7 +94,8 @@ Modal.defaultProps = {
   children: undefined,
   className: undefined,
   isOpen: false,
-  size: 'normal'
+  size: 'normal',
+  centered: true
 };
 
 export default Modal;

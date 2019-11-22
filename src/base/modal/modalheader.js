@@ -6,13 +6,15 @@ import Close from '../svg-icon/svg/close';
 
 class ModalHeader extends PureComponent {
   render() {
-    const { children, className, toggle } = this.props;
+    const { children, className, toggle, hideClose } = this.props;
     return (
       <Style.Header className={className}>
         <Style.HeaderContent>{children}</Style.HeaderContent>
-        <Style.Close onClick={toggle}>
-          <Close />
-        </Style.Close>
+        {!hideClose && (
+          <Style.Close onClick={toggle}>
+            <Close />
+          </Style.Close>
+        )}
       </Style.Header>
     );
   }
@@ -28,13 +30,18 @@ ModalHeader.propTypes = {
    * Class name of the root element.
    */
   className: PropTypes.string,
-  toggle: PropTypes.func
+  toggle: PropTypes.func,
+  /**
+   * Hide close icon
+   */
+  hideClose: PropTypes.bool
 };
 
 ModalHeader.defaultProps = {
   children: undefined,
   className: undefined,
-  toggle: undefined
+  toggle: undefined,
+  hideClose: undefined
 };
 
 export default ModalHeader;

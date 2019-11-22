@@ -42,11 +42,16 @@ export const Wrapper = styled.div`
   outline: 0;
   overflow-x: hidden;
   overflow-y: auto;
+
+  &[data-centered=true] {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const Dialog = styled.div`
   position: relative;
-  width: auto;
+  width: 100%;
   margin: 0.5rem;
   background: ${v.color.white};
   transition: all 300ms, transform 300ms;
