@@ -95,7 +95,7 @@
     "html-loader": "^0.5.5",
     "jest": "^24.8.0",
     "markdown-loader": "^5.1.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "progress-bar-webpack-plugin": "^1.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
